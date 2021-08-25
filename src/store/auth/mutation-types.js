@@ -1,0 +1,2 @@
+// 客户信息
+export const SET_CUSTOMERINFO = 'SET_CUSTOMERINFO'

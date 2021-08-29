@@ -1,22 +1,25 @@
 <!--
  * @Author: your name
- * @Date: 2021-08-25 22:26:43
- * @LastEditTime: 2021-08-29 18:46:24
+ * @Date: 2021-08-29 15:22:58
+ * @LastEditTime: 2021-08-29 19:06:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \pc-web\src\pages\App\index.vue
+ * @FilePath: \pc-web\src\pages\Main\home\index.vue
 -->
 <template>
-    <div class="App">
-        <router-view></router-view>
+    <div class="home">
+        <fly-button></fly-button>
     </div>
 </template>
 
 <script>
+import FlyButton from '@components/fly-button/index'
 export default {
-    name: 'App',
+    name: 'home',
     props: {},
-    components: {},
+    components: {
+        'fly-button': FlyButton
+    },
     data() {
         return {}
     },
@@ -26,17 +29,11 @@ export default {
     mounted() { },
     methods: {},
     updated() { },
-    beforeDestroy() { }
+    beforeDestroy() { },
 }
 </script>
 
-<style lang="less">
-@import "~@/assets/less/reset.less";
-</style>
 <style lang='less' rel='stylesheet/less' scoped>
-.App {
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-}
+@import "./index.less";
 </style>
+

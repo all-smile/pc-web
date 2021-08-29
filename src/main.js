@@ -4,10 +4,11 @@ import App from "./pages/App";
 import { sync } from "vuex-router-sync";
 import router from "./router";
 import store from "./store";
+import './assets/icon-font/iconfont.js'
+import IconColor from '@/components/icon-color/index'
 // import './router/permission'
 
-// import '@/globalComponents'
-
+Vue.use(IconColor)
 // 引入全局mixin
 import mixins from "@/mixins/index.js";
 Vue.mixin(mixins);

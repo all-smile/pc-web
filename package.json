@@ -1,11 +1,13 @@
 {
-    "name": "pangu-system-manage",
+    "name": "pc-web",
     "version": "0.1.0",
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "lint": "vue-cli-service lint",
+        "dev": "npm run serve",
+        "zip": "node ./bin/zip"
     },
     "dependencies": {
         "axios": "^0.21.1",

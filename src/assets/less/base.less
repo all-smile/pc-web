@@ -1,0 +1,287 @@
+.disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+
+//块级化并居中类
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//文本居中
+.middle-content {
+  text-align: center;
+}
+
+//显示方式类
+.inline-block {
+  display: inline-block;
+  *display: inline; //margin-right : -3px ; 元素之间显示间隙，同时没有删除空格的时候就这样写
+  *zoom: 1;
+}
+
+//清除浮动类
+.clearfix {
+  &:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  *zoom: 1; // fix for IE6/7
+}
+
+.fit-height {
+  overflow: auto;
+  zoom: 1;
+}
+
+//文本溢出省略号
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clamp_fun(@line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+}
+.clamp_1 {
+  .clamp_fun(1);
+}
+.clamp_2 {
+  .clamp_fun(2);
+}
+.clamp_3 {
+  .clamp_fun(3);
+}
+
+//渐变动画
+.transition_all {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+//弹性布局兼容样式
+.flex {
+  display: flex;
+  // display: box; 加了打包报错
+  /* OLD - Android 4.4- */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+//颜色
+@blue: #008cee !important;
+@blue-light: #3bc2b5 !important;
+@red: #d0021b !important;
+@yellow: #ff943e !important;
+@gray: #ccc !important;
+@black: #000 !important;
+.text-blue {
+  color: @blue;
+}
+
+.text-blue-light {
+  color: @blue-light;
+}
+
+.text-red {
+  color: @red;
+}
+
+.text-yellow {
+  color: @yellow;
+}
+
+.text-gray {
+  color: @gray;
+}
+
+.text-black {
+  color: @black;
+}
+
+.text-green {
+  color: #00cc00;
+}
+
+//位移
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+//定宽，常用于覆盖对话框子类
+.width320 {
+  width: 320px !important;
+}
+
+.width420 {
+  width: 420px !important;
+}
+
+.width520 {
+  width: 520px !important;
+}
+
+.width620 {
+  width: 620px !important;
+}
+
+.width720 {
+  width: 720px !important;
+}
+
+.width820 {
+  width: 820px !important;
+}
+
+.width890 {
+  width: 890px !important;
+}
+
+.width920 {
+  width: 920px !important;
+}
+
+.width960 {
+  width: 960px !important;
+}
+
+.width1020 {
+  width: 1020px !important;
+}
+
+.width1420 {
+  width: 1420px !important;
+}
+
+.widthDefault {
+  width: 680px !important;
+}
+
+.widthFull {
+  width: 100% !important;
+}
+
+.heightFull {
+  height: 100% !important;
+}
+
+//hover效果
+.text-hover:hover {
+  color: #e6001f !important;
+  cursor: pointer;
+}
+
+.text-no {
+  cursor: not-allowed !important;
+}
+
+.text_underline {
+  text-decoration: underline;
+}
+
+.font12 {
+  font-size: 12px !important;
+}
+
+//通用隐藏
+.hidden {
+  display: none;
+}
+
+//通用向上顶10px
+.marginTop10 {
+  margin-top: 10px;
+}
+
+//通用向上顶15px
+.marginTop15 {
+  margin-top: 15px;
+}
+
+//定义vue下滑动画样式
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+//邮件输入地址input
+.mail_input {
+  width: 300px;
+  .el-input__inner {
+    border-color: transparent;
+    padding: 0;
+    &:focus,
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
+
+// 通用 svg 图标
+.iconSVG {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+// message提示信息排版处理
+.el-message-box {
+  .el-message-box__message {
+    p {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}

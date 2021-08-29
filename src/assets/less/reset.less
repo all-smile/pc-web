@@ -1,0 +1,120 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+body {
+  position: relative;
+  font-size: 14px;
+  font-family: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  // min-width: 1140px;
+  // min-height: 555px;
+  overflow-x: auto;
+  color: #303133;
+}
+input {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, sans-serif;
+  color: #606266;
+  font-size: 14px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+
+a {
+  outline: none;
+  &:link {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+// 非谷歌浏览器字体处理
+textarea,
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+input:disabled {
+  background-color: #eff2f4;
+  border-color: #d1dbe5;
+  color: #bbb;
+}
+
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+p {
+  word-wrap: break-word;
+}
+
+// 修改浏览器默认滚动条样式
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+::-webkit-scrollbar //e-ui弹出框
+{
+  width: 5px;
+  height: 10px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb //e-ui弹出框
+{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(180, 180, 180, 0.3);
+  background-color: #ddd;
+}

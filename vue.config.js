@@ -18,23 +18,22 @@ module.exports = {
   chainWebpack: config => {
     config.plugin('html')
       .tap(args => {
-        args[0].title = '盘古后台管理系统'
+        args[0].title = '挨打日记'
         return args
       })
     // 引入less全局变量
-    // const oneOfsMap = config.module.rule('less').oneOfs.store
-    // oneOfsMap.forEach(item => {
-    //   item
-    //     .use('sass-resources-loader')
-    //     .loader('sass-resources-loader')
-    //     .options({
-    //       resources: [
-    //         // path.resolve(__dirname, './src/assets/less/base.less'), // 不采用此移动端适配方案
-    //         // path.resolve(__dirname, './src/assets/less/public.less')
-    //       ]
-    //     })
-    //     .end()
-    // })
+    const oneOfsMap = config.module.rule('less').oneOfs.store
+    oneOfsMap.forEach(item => {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          resources: [
+            path.resolve(__dirname, './src/assets/less/base.less'),
+          ]
+        })
+        .end()
+    })
     config.resolve.symlinks(true); // 修复热更新失效
     // 如果使用多页面打包，使用vue inspect --plugins查看html是否在结果数组中
     config.plugin("html").tap(args => {
@@ -83,7 +82,8 @@ module.exports = {
         secure: false,
         pathRewrite: {
           "^/h5api": ""
-        }
+        },
+        logLevel: 'debug',
       },
       "/api2": {
         target: "http://172.12.12.12:2018",
@@ -92,8 +92,16 @@ module.exports = {
         secure: false,
         pathRewrite: {
           "^/api2": "/"
-        }
+        },
+        logLevel: 'debug',
       },
+    }
+  },
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 为生产环境修改配置...
+    } else {
+      // 为开发环境修改配置...
     }
   }
 }

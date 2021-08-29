@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2775684 */
+  src: url('iconfont.woff2?t=1630230891871') format('woff2'),
+       url('iconfont.woff?t=1630230891871') format('woff'),
+       url('iconfont.ttf?t=1630230891871') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-color_baseball:before {
+  content: "\e685";
+}
+
+.icon-color_hamburger:before {
+  content: "\e606";
+}
+
+.icon-color_sausage:before {
+  content: "\e608";
+}
+
+.icon-color_doughnut:before {
+  content: "\e609";
+}
+
+.icon-color_bread:before {
+  content: "\e60a";
+}
+
+.icon-color_cookies:before {
+  content: "\e60b";
+}
+
+.icon-color_popsicle:before {
+  content: "\e60c";
+}
+
+.icon-color_chocolates:before {
+  content: "\e60d";
+}
+
+.icon-color_cake:before {
+  content: "\e60e";
+}
+
+.icon-color_watermelon:before {
+  content: "\e60f";
+}
+
+.icon-color_mangosteen:before {
+  content: "\e610";
+}
+
+.icon-color_noodle:before {
+  content: "\e611";
+}
+
+.icon-color_tea-milk:before {
+  content: "\e612";
+}
+
+.icon-color_candied-fruit:before {
+  content: "\e613";
+}
+
+.icon-color_sandwich:before {
+  content: "\e614";
+}
+
+.icon-color_lemon:before {
+  content: "\e615";
+}
+
+.icon-color_drumsticks:before {
+  content: "\e616";
+}
+
+.icon-color_melon-seed:before {
+  content: "\e617";
+}
+
+.icon-color_zongzi:before {
+  content: "\e618";
+}
+
+.icon-color_grape:before {
+  content: "\e619";
+}
+
+.icon-color_chips:before {
+  content: "\e61a";
+}
+

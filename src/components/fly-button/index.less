@@ -1,0 +1,185 @@
+.fly-button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  .switch {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(208, 2, 27, 0.9);
+    box-shadow: 0px 3px 10px 0px rgba(208, 2, 27, 0.3);
+    color: #fff;
+    position: relative;
+    border-radius: 50%;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 2s ease-out;
+    -moz-transition: -moz-transform 2s ease-out;
+    -o-transition: -o-transform 2s ease-out;
+    -ms-transition: -ms-transform 2s ease-out;
+    > i {
+      font-size: 26px;
+    }
+    &.transition_all:hover {
+      -webkit-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      -o-transform: rotateZ(360deg);
+      -ms-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+    }
+    &.disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    &:hover {
+      background: #e6001f;
+      cursor: pointer;
+    }
+  }
+  .Open {
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: calc((250px - 50px) / -2);
+    top: calc((250px - 50px) / -2);
+    border-radius: 50%;
+    transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.5s;
+    /* Safari 和 Chrome */
+    -o-transition: all 0.5s;
+    /* Opera */
+    .list {
+      // border: 1px solid red;
+      width: 60px;
+      position: absolute;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 22px;
+      .iconBox {
+        // border: 1px solid red;
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+        i {
+          font-size: 16px;
+        }
+      }
+      .text {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      &:hover {
+        .iconBox {
+          box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+        }
+      }
+    } //批注
+    .comment {
+      margin-top: 12px;
+      margin-left: 92px;
+      .iconBox {
+        background-color: #ffb735;
+      }
+    } //批注
+    .comment1 {
+      margin-top: 24px;
+      margin-left: 92px;
+      .iconBox {
+        background-color: #ffb735;
+      }
+    }
+    //提醒
+    .remind {
+      margin-top: 63px;
+      margin-left: 18px;
+      .iconBox {
+        background-color: #ff7165;
+      }
+    }
+    .remind1 {
+      margin-top: 82px;
+      margin-left: 10px;
+      .iconBox {
+        background-color: #ff7165;
+      }
+    }
+    //联系人
+    .contacts {
+      margin-top: 150px;
+      margin-left: 20px;
+      .iconBox {
+        background-color: #5ea3f6;
+      }
+    }
+    .contacts1 {
+      margin-top: 162px;
+      margin-left: 40px;
+      .iconBox {
+        background-color: #5ea3f6;
+      }
+    }
+    .receiver {
+      // 收货人
+      margin-top: 184px;
+      margin-left: 96px;
+      .iconBox {
+        background-color: #e6001f;
+      }
+    }
+    //附件
+    .attachment {
+      margin-top: 148px;
+      margin-left: 170px;
+      .iconBox {
+        background-color: #763626;
+      }
+    }
+    .attachment1 {
+      margin-top: 162px;
+      margin-left: 146px;
+      .iconBox {
+        background-color: #763626;
+      }
+    }
+    //跟进
+    .follow-up {
+      margin-top: 66px;
+      margin-left: 168px;
+      .iconBox {
+        background-color: #8bd867;
+      }
+    }
+    .follow-up1 {
+      margin-top: 82px;
+      margin-left: 176px;
+      .iconBox {
+        background-color: #8bd867;
+      }
+    }
+  }
+  .action {
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}

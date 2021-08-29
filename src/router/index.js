@@ -13,20 +13,15 @@ Vue.use(Router)
 const routes = [
   {
     path: "/",
-    redirect: '/test',
+    redirect: '/main/home',
   },
   {
-    path: "/test",
-    name: "Test",
-    component: () => import("@/pages/test/index")
+    path: '/main/home',
+    name: 'Home',
+    component: () => import('@/pages/Main/home/index'),
+    children: [
+    ]
   },
-  // {
-  //   path: '/main',
-  //   name: 'Main',
-  //   component: () => import('@/pages/Main/index'),
-  //   children: [
-  //   ]
-  // },
 ];
 
 const router = new Router({

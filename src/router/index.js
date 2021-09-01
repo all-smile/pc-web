@@ -22,6 +22,13 @@ const routes = [
     children: [
     ]
   },
+  {
+    path: '/main/tools/html2pdf',
+    name: 'Html2Pdf',
+    component: () => import('@/pages/Main/tools/html2pdf/index'),
+    children: [
+    ]
+  },
 ];
 
 const router = new Router({

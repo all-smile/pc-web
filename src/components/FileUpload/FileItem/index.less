@@ -1,0 +1,145 @@
+.FileItem {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    &__icon {
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        line-height: 30px;
+        text-align: center;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        &--canClick {
+            cursor: pointer;
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        &--svg {
+            width: 100%;
+            height: 100%;
+        }
+        .iconfile {
+            font-size: 22px;
+        }
+    }
+
+    &__info {
+        height: 100%;
+        line-height: 16px;
+        padding-left: 40px;
+        font-size: 12px;
+        color: #909399;
+        &--name {
+            color: #606266;
+            padding-top: 3px;
+            width: 95%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+
+    &__stopBtn {
+        display: none;
+        position: absolute;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        font-size: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background-color: #000;
+        color: #fff;
+
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        transform: translate(40%, -40%);
+
+    }
+    &:hover {
+        border-color: #c0c4cc;
+        .FileItem__stopBtn,
+        .successOperat {
+            display: block;
+        }
+    }
+}
+
+.progress {
+
+    .bar(@bgc: #EAEAEA, @w: 100%) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -2px;
+        width: @w;
+        height: 4px;
+        border-radius: 2px;
+        background-color: @bgc;
+    }
+    &__bar {
+        width: 100px;
+        height: 15px;
+        float: left;
+        position: relative;
+    }
+    &__total {
+        .bar;
+    }
+    &__now {
+        .bar(#91D279, 0)
+    }
+    &__percent {
+        margin-left: 5px;
+    }
+}
+
+.errorOperat {
+    height: 15px;
+    line-height: 15px;
+    &__info {
+        color: #D0021B;
+    }
+    &__item {
+        margin-left: 4px;
+        cursor: pointer;
+        color: #008CEE;
+    }
+}
+.successOperat {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    padding-right: 10px;
+    display: none;
+    background-color: #fff;
+    &__item {
+        float: left;
+        width: 20px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        margin-right: 8px;
+        &:hover {
+            color: #d0021b;
+        }
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
+}

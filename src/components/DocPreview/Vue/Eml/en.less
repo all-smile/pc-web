@@ -1,0 +1,384 @@
+.en {
+    .mailDetail {
+        // border: 2px solid red;
+        background-color: #fff;
+        padding: 13px 21px;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        iframe {
+            // border-top: 1px solid #ddd;
+            margin-top: 5px;
+            font-family: -apple-system, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        >.title {
+            height: 25px;
+            line-height: 25px;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            overflow: hidden;
+            .pull-right {
+                color: #222;
+                &:hover {
+                    color: #E6001F;
+                    cursor: pointer;
+                }
+            }
+            .tag {
+                position: relative;
+                top: -4px; // position: absolute; 
+                // height: 18px; // line-height: 26px;
+            }
+        }
+        .divInfo {
+            background-color: #F7F8F9;
+            padding: 10px 0;
+            border-radius: 4px;
+        }
+        .divAttch {
+            border: 1px solid #DFE2E4;
+            margin: 10px 0;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+        .itemTitle {
+            height: 17px;
+            min-height: 17px;
+            margin: 5px 1px; // border: 1px red solid;
+            min-height: 22px; // padding: 5px 30px 5px 16px;
+            color: #606266;
+            position: relative;
+            >.read {
+                margin-left: 10px;
+                color: #666;
+                >i {
+                    font-size: 12px;
+                    margin-right: 3px;
+                    font-weight: bold;
+                }
+                &.already {
+                    >i {
+                        color: #f60;
+                    }
+                }
+            }
+            .btnMore {
+                // border: 1px #E6001F solid;
+                position: absolute; // top: 3px;
+                right: 10px;
+                font-size: 12px; // margin-right: 8px;
+                color: #E6001F;
+                line-height: 17px;
+            }
+            .timeMore {
+                position: absolute; // top: 3px;
+                right: 90px;
+                font-size: 12px;
+                line-height: 17px;
+                color: #909399;
+            }
+            .name {
+                // border: 1px #f60 solid;
+                float: left; // margin-right: 8px; // min-width: 50px;
+                color: #909399;
+                font-size: 12px;
+                text-align: left; // margin: 8px;
+            }
+            >ul.mailAddress {
+                // border: 1px solid red;
+                height: 17px;
+                overflow: hidden;
+                margin-left: 15px;
+                float: left;
+                font-size: 12px;
+                color: red;
+                >li {
+                    display: inline-block;
+                    margin: 0 8px 3px 0;
+                    >span {
+                        // text-decoration: underline;
+                        color: #606266;
+                    }
+                    &:hover {
+                        color: #E6001F;
+                        cursor: default;
+                        em {
+                            background-color: #E6001F;
+                        }
+                    }
+                }
+                &::after {
+                    content: '';
+                    display: table;
+                    height: 0;
+                    clear: both;
+                }
+            }
+        }
+        .item {
+            // margin: 16px 10px; 
+            // border: 1px red solid;
+            // min-height: 22px;
+            padding: 0 30px 0 16px; // margin: 2px 0 3px;
+            color: #606266;
+            position: relative; //  float: left;
+            >.read {
+                margin-left: 10px;
+                color: #666;
+                >i {
+                    font-size: 12px;
+                    margin-right: 3px;
+                    font-weight: bold;
+                }
+                &.already {
+                    >i {
+                        color: #f60;
+                    }
+                }
+            }
+            .btnMore {
+                position: absolute; // top: 3px;
+                right: 15px;
+                font-size: 12px;
+                color: #E6001F;
+                i {
+                    margin: 4px 0 0 5px;
+                    float: right;
+                }
+            }
+            >span {
+                // border: #E6001F solid 1px;
+                color: #222222;
+                font-size: 12px; //    float: left;
+            }
+            .name {
+                //
+                float: left;
+                min-width: 60px;
+                color: #606266;
+                text-align: right;
+                font-size: 12px;
+            }
+            .stateName {
+                //  border: 1px red solid;
+                font-size: 12px;
+                height: 20px; //  float: left;
+                min-width: 300px;
+            }
+            >ul.mailAddress {
+                // height: 22px;
+                // overflow: hidden;
+                margin-left: 60px;
+                font-size: 12px;
+                color: #f60;
+                >li {
+                    display: inline-block;
+                    margin: 0 8px 3px 0;
+                    .liclass {
+                        float: left;
+                        color: RGBA(96, 98, 102, 1);
+                        font-size: 12px;
+                        text-align: left; // border: 1px red solid;
+                    }
+                    >span {
+                        text-decoration: underline;
+                        color: #222222;
+                    }
+                    >em {
+                        display: inline-block;
+                        font-size: 10px;
+                        font-style: normal;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 20px;
+                        text-align: center;
+                        border-radius: 50%;
+                        margin-left: 1px;
+                        background-color: #f60;
+                        color: #fff;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    &.supply>em {
+                        // background-color: #f60;
+                    }
+                    &.customer>em {
+                        background: linear-gradient(135deg, rgba(255, 105, 124, 1), rgba(208, 2, 27, 1));
+                    }
+                    &.strange>em {
+                        background: linear-gradient(135deg, rgba(153, 153, 153, 1), rgba(102, 102, 102, 1));
+                    }
+                    &:hover {
+                        color: #E6001F;
+                        cursor: default;
+                        em {
+                            background-color: #E6001F;
+                        }
+                    }
+                }
+                &::after {
+                    content: '';
+                    display: table;
+                    height: 0;
+                    clear: both;
+                }
+            }
+            >ul.file {
+                //邮件附件
+                margin: 8px -40px 0 0; // border-bottom: 1px solid #ddd;
+                li {
+                    display: inline-block;
+                    width: 200px;
+                    height: 45px;
+                    line-height: 45px;
+                    margin: 0 7px 5px 0;
+                    color: RGBA(144, 147, 153, 1);
+                    background: #f7f8f9;
+                    overflow: hidden;
+                    cursor: default;
+                    position: relative;
+                    .view {
+                        display: none;
+                        background-color: #fff;
+                        padding: 0 10px 0 5px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        >span {
+                            margin: 3px 0 0;
+                            padding: 3px;
+                            i {
+                                font-size: 18px;
+                            }
+                            &:hover {
+                                color: #E6001F;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .ico {
+                        width: 45px;
+                        height: 45px;
+                        overflow: hidden;
+                        text-align: center;
+                        position: absolute;
+                        z-index: 2; // border:1px solid red;
+                        .iconSVG {
+                            font-size: 36px;
+                            margin-top: 3px;
+                        }
+                        i {
+                            font-size: 32px;
+                            color: #E6001F;
+                        }
+                        >a {
+                            height: 100%;
+                            padding: 5px;
+                            display: block;
+                        }
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .title {
+                        line-height: 18px;
+                        margin: 5px 0 0 42px;
+                        padding-left: 5px;
+                        font-size: 12px;
+                        font-weight: normal;
+                        >div {
+                            width: 90%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                        >span {
+                            font-size: 12px;
+                            color: #666;
+                        }
+                    }
+                    &:hover {
+                        background: rgba(255, 255, 255, 1);
+                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+                        .buts {
+                            display: inline-block;
+                            .iconfont:hover {
+                                color: #45B2FF;
+                                cursor: pointer;
+                            }
+                        }
+                        .view {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        .receiptBox {
+            // border: 1px solid red;
+            margin-top: 10px;
+            padding: 5px 12px;
+            line-height: 26px;
+            background-color: #F7F8F9;
+            color: #222222;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            .el-button {
+                width: 55px;
+            }
+        }
+        >.msg {
+            height: 26px;
+            padding: 5px 6px;
+            font-size: 11px; // background-color: #eee;
+            color: #606266;
+            margin: 8px 0;
+            border-radius: 5px;
+            .pull-right {
+                display: none;
+                i {
+                    display: inline-block; // background-color: #888;
+                    background: linear-gradient(135deg, rgba(255, 105, 124, 1), rgba(208, 2, 27, 1));
+                    border-radius: 50%;
+                    padding: 2px;
+                    margin-top: -1px;
+                    color: #fff;
+                    font-size: 12px;
+                    &:hover {
+                        background-color: #555;
+                    }
+                }
+            }
+            >.iconfont {
+                font-size: 13px;
+                margin-right: 2px;
+                font-weight: bold;
+                &.icon-warning {
+                    color: #f60;
+                }
+            }
+            >.icon-dot {
+                font-size: 14px;
+            }
+            &:hover {
+                // background-color: #e0e0e0; 
+                // background: linear-gradient(135deg, rgba(255, 105, 124, 1), rgba(208, 2, 27, 1));
+                background: rgba(208, 2, 27, 0.05);
+                .pull-right {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -45,7 +45,7 @@ module.exports = {
       .set('@', resolve('src'))
       .set('@assets', resolve('src/assets'))
       .set('@components', resolve('src/components'))
-      .set('@baseComponents', resolve('src/base-components'))
+      .set('@basecomponents', resolve('src/basecomponents'))
       .set('@utils', resolve('src/libs/utils'))
       .set('@pages', resolve('src/pages'))
       .set('@store', resolve('src/store'));

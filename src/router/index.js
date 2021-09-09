@@ -29,6 +29,13 @@ const routes = [
     children: [
     ]
   },
+  {
+    path: '/main/tools/uploadFile',
+    name: 'UploadFile',
+    component: () => import('@/pages/Main/tools/upload-file/index'),
+    children: [
+    ]
+  },
 ];
 
 const router = new Router({

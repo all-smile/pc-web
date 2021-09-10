@@ -109,7 +109,8 @@
                     <!--  <i :class="[isMailFile ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i> -->
                 </div>
                 <div v-if="data.containAttachment" class="name">
-                    <i class="iconfont icon-attachment "></i> {{$t('mxpcweb.mail.1528709296344')}}：</div>
+                    <i class="iconfont icon-attachment "></i> {{$t('mxpcweb.mail.1528709296344')}}：
+                </div>
                 <span v-if="data.containAttachment">{{data.attachmentList.length}} 个</span>&nbsp;
                 <span v-if="false&&data.attachmentList.length>0" class="text-blue text-hover" @click="getDownload(data.mId,'all',0)">{{$t('mxpcweb.mail.1528701859716')}}</span>
                 <template v-if="isMailFile">

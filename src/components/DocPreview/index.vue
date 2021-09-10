@@ -89,12 +89,6 @@
 
 </template>
 <script>
-/**
- * 作者： 郭兵
- * 描述：文档预览
- * 用法： open(data) data是一个文档列表对象
- */
-
 import Loading from '@/basecomponents/Loading/index'
 import { getSuffix } from '@/libs/utils.js'
 import Eml from './Vue/Eml/index'

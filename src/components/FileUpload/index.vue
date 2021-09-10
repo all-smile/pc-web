@@ -41,11 +41,6 @@
 </template>
 
 <script>
-/**
- * 描述：文件上传UI封装
- * 作者：向士健
- * 时间：2018/3/5
- */
 import { getSuffix, isHasSuffix, formatValidTime } from '@/libs/utils.js'
 import FileuploadDialog from '@/basecomponents/FileuploadDialog/index' // 图片上传及进度条插件
 import FileShow from './FileShow/index'

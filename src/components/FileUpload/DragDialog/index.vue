@@ -7,11 +7,6 @@
 </template>
 
 <script>
-/**
- * 描述：文件上传UI封装
- * 作者：向士健
- * 时间：2019/1/29
- */
 export default {
     name: 'DragDialog',
     props: {

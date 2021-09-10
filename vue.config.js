@@ -85,13 +85,13 @@ module.exports = {
         },
         logLevel: 'debug',
       },
-      "/api2": {
-        target: "http://172.12.12.12:2018",
+      "/pcApi": {
+        target: "http://172.15.37.225:3000",
         changeOrigin: true,
         //ws: true,//websocket支持
         secure: false,
         pathRewrite: {
-          "^/api2": "/"
+          "^/pcApi": ""
         },
         logLevel: 'debug',
       },

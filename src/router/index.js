@@ -32,6 +32,7 @@ const routes = [
   {
     path: '/main/tools/uploadFile',
     name: 'UploadFile',
+    meta: { title: '文件上传' },
     component: () => import('@/pages/Main/tools/upload-file/index'),
     children: [
     ]

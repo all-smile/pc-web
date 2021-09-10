@@ -5,37 +5,37 @@
             <IconColor iconName="baseball"></IconColor>
         </div>
         <div class="Open" :class="isOpen ? 'action':''">
-            <div class="list comment" @click="plusClick(moduleCode,'otComment')">
+            <div class="list comment" @click="plusClick(1)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="hamburger"></IconColor>
                 </span>
                 <span class="text">汉堡</span>
             </div>
-            <div class="list remind" @click="plusClick(moduleCode,'otReminder')">
+            <div class="list remind" @click="plusClick(2)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="sausage"></IconColor>
                 </span>
                 <span class="text">香肠</span>
             </div>
-            <div class="list contacts" @click="plusClick('BF003','otNew')">
+            <div class="list contacts" @click="plusClick(3)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="doughnut"></IconColor>
                 </span>
                 <span class="text">甜甜圈</span>
             </div>
-            <div class="list receiver" @click="plusClick()">
+            <div class="list receiver" @click="plusClick(4)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="bread"></IconColor>
                 </span>
                 <span class="text">牛角面包</span>
             </div>
-            <div class="list attachment" @click="plusClick()">
+            <div class="list attachment" @click="plusClick(5)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="cookies"></IconColor>
                 </span>
                 <span class="text">曲奇饼</span>
             </div>
-            <div class="list follow-up" @click="plusClick('BF004','otNew')">
+            <div class="list follow-up" @click="plusClick(6)">
                 <span class="iconBox transition_all">
                     <IconColor iconName="popsicle"></IconColor>
                 </span>
@@ -98,11 +98,17 @@ export default {
                 // console.log("FlyButton" + e)
             }
         },
-        plusClick(moduleNum, ot) {
+        plusClick(id) {
             if (this.fly) {
                 this.isOpen = !this.isOpen
             }
-            // this.$emit('flyBtnClick', moduleNum, ot)
+            switch (id) {
+                case 5:
+                    this.$router.push('/main/tools/uploadFile')
+                    break;
+                default:
+                    break;
+            }
         },
     }
 }

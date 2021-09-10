@@ -1,3 +1,6 @@
+import defaultSettings from '@/settings/index'
+const { title = '' } = defaultSettings || {}
+
 /**
  * js获取文件后缀
  */
@@ -14,4 +17,11 @@ export const isHasSuffix = suffix => {
   let suffixArray = ['xls', 'doc', 'docx', 'ppt', 'pptx', 'avi', 'rar', 'mp3', 'mp4', 'zip', 'html', 'pdf', 'eps', 'xlsx']
   suffix = suffix.toLowerCase()
   return suffixArray.indexOf(suffix) === -1 ? 'unknow' : suffix
+}
+
+export const getPageTitle = (pageTitle) => {
+  if (pageTitle) {
+    return `${pageTitle} - ${title}`
+  }
+  return `${title}`
 }

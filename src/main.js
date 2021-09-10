@@ -6,6 +6,7 @@ import App from "./pages/App";
 import { sync } from "vuex-router-sync";
 import router from "./router";
 import store from "./store";
+import './router/permission'
 import './assets/icon-font/iconfont.js'
 import IconColor from '@/components/icon-color/index'
 // import './router/permission'

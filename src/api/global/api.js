@@ -3,7 +3,7 @@ import http from '../../libs/http'
 
 export function fileUpload(params) {
   const api = {
-    url: '/file/upload',
+    url: '/pcApi/file/upload',
     mockUrl: ''
   }
   return http.post(api, params)

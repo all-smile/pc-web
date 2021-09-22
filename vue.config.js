@@ -86,7 +86,8 @@ module.exports = {
         logLevel: 'debug',
       },
       "/pcApi": {
-        target: "http://172.15.37.225:3000",
+        // target: "http://172.15.37.225:3000", // 本地
+        target: "http://118.190.59.105:3000",
         changeOrigin: true,
         //ws: true,//websocket支持
         secure: false,

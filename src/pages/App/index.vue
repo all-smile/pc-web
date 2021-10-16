@@ -1,32 +1,32 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-25 22:26:43
- * @LastEditTime: 2021-08-29 18:46:24
+ * @LastEditTime: 2021-10-16 18:29:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \pc-web\src\pages\App\index.vue
 -->
 <template>
-    <div class="App">
-        <router-view></router-view>
-    </div>
+  <div class="App">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'App',
-    props: {},
-    components: {},
-    data() {
-        return {}
-    },
-    computed: {},
-    watch: {},
-    created() { },
-    mounted() { },
-    methods: {},
-    updated() { },
-    beforeDestroy() { }
+  name: 'App',
+  props: {},
+  components: {},
+  data() {
+    return {}
+  },
+  computed: {},
+  watch: {},
+  created() { },
+  mounted() { },
+  methods: {},
+  updated() { },
+  beforeDestroy() { }
 }
 </script>
 
@@ -35,8 +35,8 @@ export default {
 </style>
 <style lang='less' rel='stylesheet/less' scoped>
 .App {
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -33,6 +33,8 @@ export default class SnapshotSandbox {
   }
 }
 
+// 一个应用的运行，从开始到结束，切换后不会影响全局
+
 // let sandbox = new SnapshotSandbox();
 // ((window) => {
 //   window.a = 1

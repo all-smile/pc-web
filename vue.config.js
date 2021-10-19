@@ -101,7 +101,7 @@ module.exports = {
       },
     }
   },
-  configureWebpack: process.env.NODE_ENV === 'production' ? {
+  configureWebpack: IS_PROD ? {
     plugins: [
       new JavaScriptObfuscator({
         // 压缩,无换行
@@ -117,7 +117,9 @@ module.exports = {
         // debugProtectionInterval: false,
         // 通过用空函数替换它们来禁用console.log，console.info，console.error和console.warn。这使得调试器的使用更加困难。
         // disableConsoleOutput: true,
-      }, []) // 数组内是需要排除的文件
+      }, [
+        "**/node_modules/**"
+      ]) // 数组内是需要排除的文件
     ]
   } : {},
   // configureWebpack: config => {

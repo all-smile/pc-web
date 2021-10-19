@@ -1,7 +1,8 @@
+import { aesKey, aesIV } from './config'
 const CryptoJS = require('crypto-js');  //引用AES源码js
 
-const key = CryptoJS.enc.Utf8.parse("1234123412ABCDEF");  //十六位十六进制数作为密钥
-const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412');   //十六位十六进制数作为密钥偏移量
+const key = CryptoJS.enc.Utf8.parse(aesKey);  //十六位十六进制数作为密钥
+const iv = CryptoJS.enc.Utf8.parse(aesIV);   //十六位十六进制数作为密钥偏移量
 
 //解密方法
 function aesDecrypt(word) {

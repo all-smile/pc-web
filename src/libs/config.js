@@ -20,3 +20,9 @@ export const accessToken = 'accessToken'
 // 是否启用本地假数据
 export const inUseMockdata = true
 
+// aes key
+export const aesKey = 'abcdef0123456789'
+
+// aes iv
+export const aesIV = '0123456789abcdef'
+

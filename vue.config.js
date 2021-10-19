@@ -4,11 +4,12 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 const resolve = (dir) => path.join(__dirname, dir);
 
 console.log('NODE_ENV===', process.env.NODE_ENV);
+console.log('VUE_APP_PATH===', process.env.VUE_APP_PATH);
 console.log('IS_PROD===', IS_PROD);
 
 module.exports = {
-  publicPath: IS_PROD ? '/lily/' : '/',  // 公共路径
-  // publicPath: '/',  // 公共路径
+  publicPath: IS_PROD ? process.env.VUE_APP_PATH : '/',  // 公共路径
+  // publicPath: IS_PROD ? './' : '/',  // 公共路径
   indexPath: 'index.html', // 相对于打包路径index.html的路径
   outputDir: process.env.outputDir || 'dist', // 'dist', 生产环境构建文件的目录
   assetsDir: 'static', // 相对于outputDir的静态资源(js、css、img、fonts)目录
@@ -103,6 +104,12 @@ module.exports = {
   configureWebpack: process.env.NODE_ENV === 'production' ? {
     plugins: [
       new JavaScriptObfuscator({
+        // 压缩,无换行
+        compact: true,
+        // 允许将信息记录到控制台。
+        log: true,
+        // 此选项禁用console所有脚本的全局调用
+        disableConsoleOutput: true,
         rotateStringArray: true,
         // 此选项几乎不可能使用开发者工具的控制台选项卡
         // debugProtection: false,

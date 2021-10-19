@@ -44,7 +44,7 @@ const routes = [
 
 const router = new Router({
   mode: 'history',
-  base: '/lily/',
+  base: process.env.VUE_APP_PATH,
   routes,
 });
 

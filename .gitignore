@@ -17,7 +17,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-
 .DS_Store
 node_modules/
 dist/
@@ -28,3 +27,4 @@ yarn-error.log*
 .vscode
 package-lock.json
 yarn.lock
+*.zip

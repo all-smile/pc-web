@@ -1,15 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2021-08-29 14:43:40
- * @LastEditTime: 2021-08-29 15:11:30
+ * @LastEditTime: 2021-10-20 13:26:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \pc-web\bin\zip
  */
 
 var fs = require('fs');
+const execa = require('execa');
 var moment = require('moment')
-console.log(moment);
 var path = require('path');
 // The zip library needs to be instantiated:
 // https://github.com/daraosn/node-zip http://stuk.github.io/jszip/
@@ -18,23 +18,36 @@ var zip = new require('node-zip')();
 var root = path.join(__dirname, '../');
 
 function addFile(instance, folder) {
-    const files = fs.readdirSync(folder);
-    for (let i = 0, len = files.length; i < len; i++) {
-        const file = path.join(folder, files[i]);
+  const files = fs.readdirSync(folder);
+  for (let i = 0, len = files.length; i < len; i++) {
+    const file = path.join(folder, files[i]);
 
-        const stat = fs.statSync(file);
-        if (stat.isDirectory()) {
-            const folder = instance.folder(path.basename(file));
-            addFile(folder, file);
-        } else {
-            if (path.extname(file) !== '.map') {
-                instance.file(path.basename(file), fs.readFileSync(file));
-            }
-        }
+    const stat = fs.statSync(file);
+    if (stat.isDirectory()) {
+      const folder = instance.folder(path.basename(file));
+      addFile(folder, file);
+    } else {
+      if (path.extname(file) !== '.map') {
+        instance.file(path.basename(file), fs.readFileSync(file));
+      }
     }
+  }
 }
+
+(async () => {
+  const temp = await execa.commandSync('git rev-parse --abbrev-ref HEAD');
+  console.log(temp);
+  //=> 'unicorns'
+})();
+
+function getGitBranch() {
+  const res = execa.commandSync('git rev-parse --abbrev-ref HEAD');
+  return res.stdout;
+}
+const curbranch = getGitBranch()
+console.log('curbranch--', curbranch);
 
 addFile(zip, path.join(root, 'dist'));
 var data = zip.generate({ base64: false, compression: 'DEFLATE' });
 // it's important to use *binary* encode
-fs.writeFileSync(`pc-web-${moment().format('yyyyMMDD')}.zip`, data, 'binary');
+fs.writeFileSync(`pc-web-${curbranch}-${moment().format('yyyyMMDD')}.zip`, data, 'binary');

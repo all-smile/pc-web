@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-29 15:22:58
- * @LastEditTime: 2021-10-16 22:24:44
+ * @LastEditTime: 2021-10-27 10:33:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \pc-web\src\pages\Main\home\index.vue
@@ -41,7 +41,8 @@ export default {
     //   console.log(window.a, window.b);
     // })(sandbox.proxy) // sandbox.proxy 就是window
   },
-  mounted() { },
+  mounted() {
+  },
   methods: {},
   updated() { },
   beforeDestroy() { },

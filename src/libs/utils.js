@@ -56,3 +56,40 @@ export const onlyOnce = (arr) => {
     return null
   }
 }
+
+// 判断是否是有效括号
+export const isAvailableBrackets = (str) => {
+  let stack = [] // 定义栈
+  // 定义括号集
+  const brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  }
+  const leftBrackets = Object.keys(brackets)
+  const rightBrackets = Object.values(brackets)
+  for (let i = 0; i < str.length; i++) {
+    // 如果是左括号，把对应的右括号压栈
+    // 如果是右括号，判断栈是否为空
+    if (leftBrackets.includes(str.charAt(i))) {
+      stack.push(brackets[str.charAt(i)])
+    } else if (rightBrackets.includes(str.charAt(i))) {
+      if (stack.length === 0) {
+        return false
+      } else {
+        let stackTop = stack.pop() // 栈顶元素出栈
+        if (stackTop === str.charAt(i)) {
+          continue
+        } else {
+          return false
+        }
+      }
+    }
+  }
+  // 遍历结束之后，判断栈是否为空
+  if (stack.length === 0) {
+    return true
+  } else {
+    return false
+  }
+}

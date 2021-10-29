@@ -45,7 +45,7 @@ function getGitBranch() {
   return res.stdout;
 }
 const curbranch = getGitBranch()
-console.log('curbranch--', curbranch);
+// console.log('curbranch--', curbranch);
 
 addFile(zip, path.join(root, 'dist'));
 var data = zip.generate({ base64: false, compression: 'DEFLATE' });

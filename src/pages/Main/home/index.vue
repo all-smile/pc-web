@@ -13,9 +13,10 @@
 </template>
 
 <script>
+// import { getMixed } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'
-import SnapshotSandbox from "@/libs/sandbox.js";
-import ProxySandbox from "@/libs/sandbox02.js";
+// import SnapshotSandbox from "@/libs/sandbox.js";
+// import ProxySandbox from "@/libs/sandbox02.js";
 export default {
   name: 'home',
   props: {},
@@ -42,6 +43,7 @@ export default {
     // })(sandbox.proxy) // sandbox.proxy 就是window
   },
   mounted() {
+    // console.log(getMixed([1, 1, 2, 5], [1, 2, 4, 5]))
   },
   methods: {},
   updated() { },

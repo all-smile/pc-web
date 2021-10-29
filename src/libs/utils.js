@@ -93,3 +93,35 @@ export const isAvailableBrackets = (str) => {
     return false
   }
 }
+
+// 一维数字数组排序
+export const arrSort = (arr) => {
+  arr.sort((a, b) => { return a - b });
+  return [...arr]
+}
+
+// 两个一维数字数组求交集
+// 也可以使用map解决，创建json, key: value
+export const getMixed = (arr1, arr2) => {
+  arr1.sort((a, b) => { return a - b })
+  arr2.sort((a, b) => { return a - b })
+  let i = 0
+  let j = 0
+  let list = [] // 存放相同数组元素
+  // 当其中一个数组遍历结束就跳出循环
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      // 如果i指向的值小于j指向的值，说明i指向的值小了，i往后移一步
+      i++
+    } else if (arr1[i] > arr2[j]) {
+      // 如果i指向的值大于j指向的值，说明j指向的值小了，j往后移一步
+      j++
+    } else {
+      // 如果i指向的值等于j指向的值， 说明这两个值是重复的元素，存入list中，i和j同时后移
+      list.push(arr1[i])
+      i++
+      j++
+    }
+  }
+  return [...list]
+}

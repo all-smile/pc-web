@@ -69,5 +69,86 @@ export default {
       }
       return sizestr
     },
+
+    // 判断IE浏览器
+    isIE() {
+      if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+
+    // 判断IE并给出相应的版本
+    IEVersion() {
+      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+      var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+      var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+      var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+      if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion == 7) {
+          return 7;
+        } else if (fIEVersion == 8) {
+          return 8;
+        } else if (fIEVersion == 9) {
+          return 9;
+        } else if (fIEVersion == 10) {
+          return 10;
+        } else {
+          return 6;//IE版本<=7
+        }
+      } else if (isEdge) {
+        return 'edge';//edge
+      } else if (isIE11) {
+        return 11; //IE11
+      } else {
+        return -1;//不是ie浏览器
+      }
+    },
+
+    // 判断主流浏览器版本
+    browserVersion() {
+      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+      var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+      var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+      var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //Edge浏览器
+      var isFirefox = userAgent.indexOf("Firefox") > -1; //Firefox浏览器
+      var isOpera = userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1; //Opera浏览器
+      var isChrome = userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Edge") == -1 && userAgent.indexOf("OPR") == -1; //Chrome浏览器
+      var isSafari = userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") == -1 && userAgent.indexOf("Edge") == -1 && userAgent.indexOf("OPR") == -1; //Safari浏览器
+      if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion == 7) {
+          return 'IE7';
+        } else if (fIEVersion == 8) {
+          return 'IE8';
+        } else if (fIEVersion == 9) {
+          return 'IE9';
+        } else if (fIEVersion == 10) {
+          return 'IE10';
+        } else {
+          return 'IE6';//IE版本<7
+        }
+      } else if (isIE11) {
+        return 'IE11';
+      } else if (isEdge) {
+        return 'Edge' + userAgent.split('Edge/')[1].split('.')[0];
+      } else if (isFirefox) {
+        return 'Firefox' + userAgent.split('Firefox/')[1].split('.')[0];
+      } else if (isOpera) {
+        return 'Opera' + userAgent.split('OPR/')[1].split('.')[0];
+      } else if (isChrome) {
+        return 'Chrome' + userAgent.split('Chrome/')[1].split('.')[0];
+      } else if (isSafari) {
+        return 'Safari'; +userAgent.split('Safari/')[1].split('.')[0];
+      } else {
+        return -1;//不是ie浏览器
+      }
+    }
   }
 }

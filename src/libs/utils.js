@@ -101,6 +101,7 @@ export const arrSort = (arr) => {
 }
 
 // 两个一维数字数组求交集
+// 这里使用双指针解决
 // 也可以使用map解决，创建json, key: value
 export const getMixed = (arr1, arr2) => {
   arr1.sort((a, b) => { return a - b })
@@ -124,4 +125,53 @@ export const getMixed = (arr1, arr2) => {
     }
   }
   return [...list]
+}
+
+// 判断数组之间的关系, 元素顺序也必须一致
+export const arrayInclude = (arrA, arrB) => {
+  // 对数组arrA和arrB进行升序排序
+  arrA.sort((a, b) => a - b)
+  arrB.sort((a, b) => a - b)
+  console.log(arrA, arrB);
+  for (let i = 0; i < arrA.length; i++) {
+    if (arrB.includes(arrA[i])) {
+      // findIndex方法用于找到当前值的索引
+      let index = arrB.findIndex(value => arrA[i] === value)
+      if (index !== i) return -1 // 解决case 4
+      // 以下两句，数组A，B中对应索引的值都删除掉
+      arrB.splice(index, 1)
+      arrA.splice(i, 1)
+      // 上面的索引删除了，所以要继续遍历当前这个
+      i--
+    }
+  }
+  // 当B属于A时，返回2
+  if (arrA.length > arrB.length) {
+    return 2;
+  }
+  // 当A属于B时，返回1
+  else if (arrA.length < arrB.length) {
+    return 1;
+  }
+  // 当两者相等时，返回0
+  else if (arrA.length === arrB.length) {
+    return 0;
+  }
+}
+
+/**
+ * 判断数组元素的包含关系，不要求顺序一致
+ * 数组中不存在重复元素
+ * arrA包含arrB
+ * 用于验证路由权限
+*/
+export const arrayIncludeV2 = (arrA, arrB) => {
+  let flag = true
+  for (let i = 0; i < arrB.length; i++) {
+    if (!arrA.includes(arrB[i])) {
+      flag = false
+      break
+    }
+  }
+  return flag
 }

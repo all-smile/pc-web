@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// import { getMixed } from '@/libs/utils'
+import { getMixed, arrayInclude, arrayIncludeV2 } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'
 // import SnapshotSandbox from "@/libs/sandbox.js";
 // import ProxySandbox from "@/libs/sandbox02.js";
@@ -44,6 +44,9 @@ export default {
   },
   mounted() {
     // console.log(getMixed([1, 1, 2, 5], [1, 2, 4, 5]))
+    const arr1 = ["E", 1, 2]
+    const arr2 = [1, "D",]
+    console.log(arrayIncludeV2(arr1, arr2));
   },
   methods: {},
   updated() { },

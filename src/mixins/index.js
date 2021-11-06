@@ -149,6 +149,6 @@ export default {
       } else {
         return -1;//不是ie浏览器
       }
-    }
+    },
   }
 }

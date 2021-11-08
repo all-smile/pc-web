@@ -2,7 +2,9 @@ import router from './index.js'
 import store from '@/store'
 import { accessToken, isDev } from '@/libs/config'
 import { getPageTitle } from '@/libs/utils'
-// import MXEventBus from '@/libs/event'
+// import $eventBus from '@/libs/event'
+import nProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 const whitelist = [
@@ -13,6 +15,7 @@ const whitelist = [
 
 router.beforeEach((to, from, next) => {
   try {
+    nProgress.start()
     // let accessTokenStr = getToken()[accessToken]
     if (to?.meta?.title) {
       document.title = getPageTitle(to.meta.title)
@@ -30,6 +33,7 @@ router.beforeEach((to, from, next) => {
 
     if (isNext) {
       next()
+      nProgress.done()
     } else {
       console.log(to.path + ' is unavailable!')
       next({
@@ -39,13 +43,16 @@ router.beforeEach((to, from, next) => {
           errPath: to.path
         }
       })
+      nProgress.done()
     }
   } catch (err) {
+    nProgress.done()
     console.log(err);
   }
 })
 
 router.afterEach(() => {
+  nProgress.done()
   window.scrollTo(0, 0);
 });
 

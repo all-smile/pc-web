@@ -77,20 +77,11 @@ module.exports = {
     open: true, //配置自动启动浏览器
     hotOnly: true, // 热更新
     // proxy: 'http://localhost:8080'   // 配置跨域处理,只有一个代理
-    proxy: { //配置多个跨域
-      "/h5api": {
-        target: "http://172.11.11.11:7071",
-        changeOrigin: true,
-        // ws: true,//websocket支持
-        secure: false,
-        pathRewrite: {
-          "^/h5api": ""
-        },
-        logLevel: 'debug',
-      },
+    proxy: {
+      //配置多个跨域
       "/pcApi": {
-        // target: "http://172.15.37.225:3000", // 本地
-        target: "http://118.190.59.105:3000",
+        target: "http://172.15.37.225:3000", // 本地
+        // target: "http://118.190.59.105:3000",
         changeOrigin: true,
         //ws: true,//websocket支持
         secure: false,

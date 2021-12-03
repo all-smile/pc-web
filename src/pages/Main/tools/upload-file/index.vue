@@ -44,7 +44,7 @@
 <script>
 import axios from 'axios'
 import SparkMD5 from "spark-md5"
-// import { fileUpload } from '@/api/global/api.js'
+import { fileUpload } from '@/api/global/api.js'
 // import DocPreview from '@/components/DocPreview/index'
 // import FileuploadDialog from '@/basecomponents/FileuploadDialog/index' // 资源上传及进度条插件
 // import FileShow from '@/components/FileUpload/FileShow/index'
@@ -134,7 +134,8 @@ export default {
     uploadFile(files) {
       console.log('uploadFile', files);
       this.oriData = files
-      files.forEach((item, i) => {
+      let filesArr = Array.prototype.slice.call(files)
+      filesArr.forEach((item, i) => {
         let fileurl = ''
         let video_type = item.type == "video/mp4" || item.type == "video/ogg";
         if (item.type.indexOf('image') === 0) {  //如果是图片
@@ -224,10 +225,13 @@ export default {
                 console.log(blockCount, i, e, file);
               },
             };
+            console.log("form", form);
+            console.log("form", form);
+            console.log("v", form.values());
             // 加入到 Promise 数组中
-            axiosPromiseArray.push(axios.post('/pcApi/file/upload', form, axiosOptions));
-            // let requestApi = fileUpload(form)
-            // axiosPromiseArray.push(requestApi);
+            // axiosPromiseArray.push(axios.post('/pcApi/file/upload', form, axiosOptions));
+            let requestApi = fileUpload(form, axiosOptions)
+            axiosPromiseArray.push(requestApi);
           }
           // 所有分片上传后，请求合并分片文件
           await axios.all(axiosPromiseArray).then(() => {
@@ -251,7 +255,7 @@ export default {
             });
           });
         } else {
-          this.$message('网络环境异常，请稍后再试')
+          this.$message('请选择文件再提交')
         }
       } catch (err) {
         console.log(err);

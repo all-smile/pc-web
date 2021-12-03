@@ -1,6 +1,194 @@
 import defaultSettings from '@/settings/index'
 const { title = '' } = defaultSettings || {}
 
+function isPrototype(value) {
+  const Ctor = value && value.constructor
+  const proto = (typeof Ctor == 'function' && Ctor.prototype) || Object.prototype
+
+  return value === proto
+}
+
+export const setStore = (name, content) => {
+  try {
+    if (content === undefined) {
+      localStorage.removeItem(name)
+    } else {
+      localStorage.setItem(name, JSON.stringify(content))
+    }
+  } catch (e) {
+    console.log('setStore error!')
+  }
+}
+
+export const getStore = name => {
+  try {
+    let result = localStorage.getItem(name)
+    return result ? JSON.parse(result) : null
+  } catch (e) {
+    console.log('getStore error!')
+    return null
+  }
+}
+
+export const removeStore = name => {
+  try {
+    localStorage.removeItem(name)
+  } catch (e) {
+    console.log('removeStore error!')
+  }
+}
+
+export const clearStore = () => {
+  try {
+    localStorage.clearAll()
+  } catch (e) {
+    console.log('clearStore error!')
+  }
+}
+
+/**
+* 设置sessionstorage
+*/
+export const setItem = (key, value) => {
+  try {
+    sessionStorage.setItem(key, value)
+  } catch (e) {
+    console.log('setItem error!')
+  }
+}
+
+/**
+* 获取sessionstorage
+*/
+export const getItem = (key) => {
+  try {
+    return sessionStorage.getItem(key)
+  } catch (e) {
+    console.log('getItem error!')
+  }
+}
+
+/**
+* 删除sessionstorage
+*/
+export const removeItem = (key) => {
+  try {
+    sessionStorage.removeItem(key)
+  } catch (e) {
+    console.log('removeItem error!')
+  }
+}
+
+/**
+* 清空sessionstorage
+*/
+export const clearItem = () => {
+  try {
+    sessionStorage.clear()
+  } catch (e) {
+    console.log('removeItem error!')
+  }
+}
+
+/**
+* 获取cookie
+*/
+export const getCookie = name => {
+  try {
+    return Cookies.get(name)
+  } catch (e) {
+    console.log('getCookie error!')
+    return null
+  }
+}
+
+/**
+* 设置cookie
+* 默认0.5天过期
+*/
+export const setCookie = (name, value, option = {}) => {
+  try {
+    Cookies.set(name, value, option)
+  } catch (e) {
+    console.log('setCookie error!')
+  }
+}
+
+/**
+* 删除cookie
+*/
+export const removeCookie = (name, option = {}) => {
+  try {
+    Cookies.remove(name, option)
+  } catch (e) {
+    console.log('removeCookie error!')
+  }
+}
+
+/**
+* 清空all cookies
+*/
+export const clearCookie = function () {
+  var keys = document.cookie.match(/[^ =;]+(?=\=)/g)
+  if (keys) {
+    for (var i = keys.length; i--;) {
+      document.cookie =
+        keys[i] + '=0;expires=' + new Date(0).toUTCString()
+    }
+  }
+}
+
+/**
+* 退出清空cookies，清空storege
+*/
+export const clearCookiesStorege = function () {
+  // clearStore()
+  clearItem()
+  // clearCookie();
+}
+
+
+/**
+ * 判断是否是合法的url
+ */
+export const checkUrl = str => {
+  var RegUrl = new RegExp()
+  RegUrl.compile('^[A-Za-z]+://[A-Za-z0-9-_]+\\.[A-Za-z0-9-_%&?/.=]+$')
+  if (!RegUrl.test(str)) {
+    return false
+  }
+  return true
+}
+
+/**
+* 判断是否是合法的Email
+*/
+export const checkEmail = str => {
+  var re = /^[a-zA-Z0-9_\.\-]{1,50}(-*)@[a-zA-Z0-9_\.\-]{1,50}(-*)\.[a-zA-Z0-9_\.\-]{1,50}(-*)$/
+  /// ^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/
+  return !!re.test(str)
+}
+
+/**
+* 判断是否合法的手机号码
+*/
+export const checkPhone = phone => {
+  phone = trim(phone, 'g')
+  var reg = /^(?=.*\d)[\d+_-]+$/
+  return !!reg.test(phone)
+  // return true // 不让校验
+}
+
+/**
+* 判断是否合法的电话，(外贸国外号居多，放松验证))
+*/
+export const checkTel = tel => {
+  tel = trim(tel, 'g')
+  var reg = /^(?=.*\d)[\d+_-]+$/
+  return !!reg.test(tel)
+  // return true // 2019-1-2 按用户要求，不要验证
+}
+
 /**
  * js获取文件后缀
  */
@@ -174,4 +362,178 @@ export const arrayIncludeV2 = (arrA, arrB) => {
     }
   }
   return flag
+}
+
+/**
+ * 判断是否是对象
+ */
+export const isObject = (obj, isEffective = false) => {
+  if (Object.prototype.toString.call(obj) === '[object Object]') {
+    if (isEffective) {
+      return !!Object.keys(obj).length
+    } else {
+      return true
+    }
+  } else {
+    return false
+  }
+}
+
+/**
+* 判断是否是数组类型，
+* 并且是否是有效数组
+*/
+export const isArray = (array, isEffective = false) => {
+  if (Object.prototype.toString.call(array) === '[object Array]') {
+    if (isEffective) {
+      return array.length > 0
+    } else {
+      return true
+    }
+  } else {
+    return false
+  }
+}
+
+/**
+* 判断是否是字符串类型
+*/
+export const isString = (str, isEffective = false) => {
+  if (Object.prototype.toString.call(str) === '[object String]') {
+    if (isEffective) {
+      return !!str
+    } else {
+      return true
+    }
+  } else {
+    return false
+  }
+}
+
+/**
+* 判断是否是数值类型
+*/
+export const isNumber = num => {
+  if (Object.prototype.toString.call(num) === '[object Number]') {
+    return true
+  } else {
+    return false
+  }
+}
+
+/**
+* 判断是否是布尔类型
+*/
+export const isBoolean = boolean => {
+  if (Object.prototype.toString.call(boolean) === '[object Boolean]') {
+    return true
+  } else {
+    return false
+  }
+}
+/**
+* 判断对象是否有属性
+*/
+export const isEmptyObject = function (obj) {
+  return typeof obj === 'object' && Object.keys(obj).length === 0
+}
+export const delEmptyStr = function (content, recurse) {
+  for (var i in content) {
+    if (content[i] === '') {
+      delete content[i]
+    } else if (recurse && typeof content[i] === 'object') {
+      delEmptyStr(content[i], recurse)
+    }
+  }
+}
+export const delEmptyObj = function (content, recurse) {
+  for (var i in content) {
+    if (isEmptyObject(content[i])) {
+      delete content[i]
+    } else if (recurse && typeof content[i] === 'object') {
+      delEmptyObj(content[i], recurse)
+    }
+  }
+}
+export const delEmptyStrObj = function (content, recurse) {
+  delEmptyStr(content, recurse)
+  delEmptyObj(content, recurse)
+}
+
+/**
+ *  判断是否包含中文
+ * @param {String} str
+ * @returns {Boolean}
+ */
+export const hasHan = function (str) {
+  let reg = /[\u4e00-\u9fa5]/g
+  return reg.test(str)
+}
+
+/**
+* 延时
+* @param {number} duration
+* @returns {Promise}
+*/
+export const sleep = function (duration = 0) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, duration)
+  })
+}
+
+
+export const deDuplication = function (arr) {
+  try {
+    // 返回新数组(去重后的数组)
+    return Array.from(new Set(arr)) // es6
+  } catch (err) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+      if (arr.indexOf(arr[i]) === i) {
+        newArr.push(arr[i])
+      }
+    }
+    console.log(err)
+    return newArr
+  }
+}
+
+// 四舍五入
+export const roundNum = function (number = 0, decimal = 0) {
+  // 处理有的后端给我们科学计数法的数字
+  if (typeof (number) == 'string' && (number.indexOf('e') > 0 || number.indexOf('E') > 0)) {
+    return new Decimal(number)
+  }
+
+  function accMul(arg1, arg2) {
+    let m = 0
+    let s1 = String(arg1)
+    let s2 = String(arg2)
+    try { m += s1.split('.')[1].length } catch (e) { }
+    try { m += s2.split('.')[1].length } catch (e) { }
+    return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m)
+  }
+  return Math.round(accMul(number, Math.pow(10, decimal))) / Math.pow(10, decimal)
+}
+
+export const throttle = function (func, duration) {
+  let prev = 0
+  let timer = null
+  return function () {
+    let now = Date.now()
+    let ctx = this
+    let args = arguments
+    clearTimeout(timer)
+
+    if (now - prev > duration) {
+      func.apply(ctx, args)
+      prev = Date.now()
+    } else {
+      timer = setTimeout(() => {
+        func.apply(ctx, args)
+      }, duration)
+    }
+  }
 }

@@ -9,6 +9,7 @@
 <template>
   <div class="home">
     <fly-button></fly-button>
+    <svg-icon icon-class="question" />
   </div>
 </template>
 

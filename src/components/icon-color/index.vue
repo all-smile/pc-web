@@ -7,34 +7,34 @@
  * @FilePath: \pc-web\src\components\icon-color\index.vue
 -->
 <template>
-    <svg class="color__icon icon icon-color_hamburger" :style="'font-size:' + fontSize + 'px'" aria-hidden="true">
-        <use v-bind:xlink:href="'#icon-color_' + iconName"></use>
-    </svg>
+  <svg class="all-icon color__icon icon icon-color_hamburger" :style="'font-size:' + fontSize + 'px'" aria-hidden="true">
+    <use v-bind:xlink:href="'#icon-color_' + iconName"></use>
+  </svg>
 </template>
 
 <script>
 export default {
-    name: 'icon-color',
-    props: {
-        iconName: {
-            type: String,
-            default: ''
-        },
-        fontSize: {
-            type: [Number, String],
-            default: 16
-        }
+  name: 'icon-color',
+  props: {
+    iconName: {
+      type: String,
+      default: ''
     },
-    components: {},
-    data() {
-        return {}
-    },
-    computed: {},
-    watch: {},
-    created() { },
-    mounted() { },
-    methods: {},
-    beforeDestroy() { }
+    fontSize: {
+      type: [Number, String],
+      default: 16
+    }
+  },
+  components: {},
+  data() {
+    return {}
+  },
+  computed: {},
+  watch: {},
+  created() { },
+  mounted() { },
+  methods: {},
+  beforeDestroy() { }
 }
 </script>
 

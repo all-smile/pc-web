@@ -36,7 +36,7 @@ function addFile(instance, folder) {
 
 (async () => {
   const temp = await execa.commandSync('git rev-parse --abbrev-ref HEAD');
-  console.log(temp);
+  console.log("branch = ", temp.stdout);
   //=> 'unicorns'
 })();
 
@@ -50,4 +50,4 @@ const curbranch = getGitBranch()
 addFile(zip, path.join(root, 'dist'));
 var data = zip.generate({ base64: false, compression: 'DEFLATE' });
 // it's important to use *binary* encode
-fs.writeFileSync(`pc-web-${curbranch}-${moment().format('yyyyMMDD')}.zip`, data, 'binary');
+fs.writeFileSync(`pc-web-${curbranch}-${moment().format('yyyyMMDDHHmm')}.zip`, data, 'binary');

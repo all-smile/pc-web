@@ -7,7 +7,7 @@
  * @FilePath: \pc-web\src\pages\Main\home\index.vue
 -->
 <template>
-  <div class="home">
+  <div class="home" v-cusLoading="isLoading" element-loading-text="老夫正在拼命加载中..">
     <fly-button></fly-button>
     <svg-icon icon-class="question" />
   </div>
@@ -25,11 +25,14 @@ export default {
     'fly-button': FlyButton
   },
   data() {
-    return {}
+    return {
+      isLoading: false
+    }
   },
   computed: {},
   watch: {},
   created() {
+    this.isLoading = true
     // console.log('SnapshotSandbox', SnapshotSandbox);
     // let sandbox = new SnapshotSandbox();
     // console.log('sandbox', sandbox);
@@ -48,6 +51,9 @@ export default {
     const arr1 = ["E", 1, 2]
     const arr2 = [1, "D",]
     console.log(arrayIncludeV2(arr1, arr2));
+    setTimeout(() => {
+      this.isLoading = false
+    }, 1000)
   },
   methods: {},
   updated() { },

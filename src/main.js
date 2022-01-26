@@ -12,6 +12,9 @@ import IconColor from '@/components/icon-color/index'
 import './assets/icons' // icon
 // import './router/permission'
 
+// 自定义指令
+import './directive'
+
 Vue.use(Element, { size: 'small' });
 Vue.use(IconColor) // 注册全局 iconfont 组件
 // 引入全局mixin

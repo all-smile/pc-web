@@ -17,6 +17,11 @@ const routes = [
     redirect: '/main/home',
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/pages/Login/index')
+  },
+  {
     path: '/main/home',
     name: 'Home',
     component: () => import('@/pages/Main/home/index'),

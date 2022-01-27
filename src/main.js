@@ -1,7 +1,8 @@
 // import './libs'
 import Vue from "vue";
 import Element from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/index.css';
+import "@/theme/index.css"
 import App from "./pages/App";
 import { sync } from "vuex-router-sync";
 import router from "./router";

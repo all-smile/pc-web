@@ -93,7 +93,6 @@ Vue.directive('cusLoading', {
         fullscreen: !!binding.modifiers.fullscreen
       }
     })
-    console.log("mask = ", mask);
 
     el.instance = mask
     el.mask = mask.$el

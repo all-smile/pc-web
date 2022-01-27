@@ -10,19 +10,23 @@
   <div class="home" v-cusLoading="isLoading" element-loading-text="老夫正在拼命加载中..">
     <fly-button></fly-button>
     <svg-icon icon-class="question" />
+    <theme-pick @onThemeChange="onThemeChange"></theme-pick>
+    <el-button type="primary">主要按钮</el-button>
   </div>
 </template>
 
 <script>
 import { getMixed, arrayInclude, arrayIncludeV2 } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'
+import ThemePick from '@components/ThemePick/index'
 // import SnapshotSandbox from "@/libs/sandbox.js";
 // import ProxySandbox from "@/libs/sandbox02.js";
 export default {
   name: 'home',
   props: {},
   components: {
-    'fly-button': FlyButton
+    'fly-button': FlyButton,
+    'theme-pick': ThemePick
   },
   data() {
     return {
@@ -48,14 +52,18 @@ export default {
   },
   mounted() {
     // console.log(getMixed([1, 1, 2, 5], [1, 2, 4, 5]))
-    const arr1 = ["E", 1, 2]
+    /* const arr1 = ["E", 1, 2]
     const arr2 = [1, "D",]
-    console.log(arrayIncludeV2(arr1, arr2));
+    console.log(arrayIncludeV2(arr1, arr2)); */
     setTimeout(() => {
       this.isLoading = false
     }, 1000)
   },
-  methods: {},
+  methods: {
+    onThemeChange(val) {
+      console.log("onThemeChange = ", val);
+    }
+  },
   updated() { },
   beforeDestroy() { },
 }

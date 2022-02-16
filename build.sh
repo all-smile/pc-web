@@ -1,4 +1,5 @@
 cd $(dirname $0)
+pwd
 # npm install -g yarn
 # yarn
 # # 清理缓存
@@ -14,4 +15,5 @@ mkdir -p docker
 mv dist/pc-web.tar.gz docker/
 cp -r Dockerfile docker/
 cd docker
+ls
 docker build -t pc-web:latest .

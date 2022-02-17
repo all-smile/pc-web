@@ -6,7 +6,7 @@ pwd
 # rm -rf node_modules/.cache
 # rm -rf dist
 # 打包
-# npm run build
+npm run build
 # 进入打包目录
 cd dist
 tar -zcvf pc-web.tar.gz ./*

@@ -22,6 +22,11 @@ const routes = [
     component: () => import('@/pages/Login/index')
   },
   {
+    path: '/compassNav',
+    name: 'CompassNav',
+    component: () => import('@/pages/CompassNav/index')
+  },
+  {
     path: '/main/home',
     name: 'Home',
     component: () => import('@/pages/Main/home/index'),

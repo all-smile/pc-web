@@ -1,0 +1,88 @@
+.compassNav {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: url("./img/grow_up.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+  }
+  &__content {
+    // display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    .compassNav-item {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+      height: 160px;
+      flex: 1;
+      overflow: hidden;
+      padding: 11px 15px;
+      position: relative;
+      color: #606266;
+      margin-right: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      &:nth-last-of-type(1) {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        transform: translate(0, -10px);
+        // box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+        // .iconBox {
+        // }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 4px;
+        opacity: 0.8;
+      }
+      .colorLine(@index, @startColor, @endColor) {
+        &:nth-child(@{index})::after {
+          background: linear-gradient(136.4deg, @startColor, @endColor);
+        }
+      }
+      .colorLine(1n, rgba(255, 122, 109, 1), rgba(255, 77, 62, 1));
+      .colorLine(2n, rgba(93, 219, 224, 1), rgba(0, 188, 218, 1));
+      .colorLine(3n, rgba(59, 220, 72, 1), rgba(92, 209, 46, 1));
+      .colorLine(4n, rgba(254, 190, 43, 1), rgba(255, 163, 0, 1));
+      .colorLine(5n, rgba(148, 117, 247, 1), rgba(119, 83, 233, 1));
+
+      &__count {
+        font-size: 20px;
+        color: #222;
+        font-weight: 600;
+      }
+      &__typeName {
+        font-size: 12px;
+        margin: 5px 0;
+      }
+      &__skill {
+        font-weight: bold;
+      }
+    }
+  }
+}

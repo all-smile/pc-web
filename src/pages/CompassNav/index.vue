@@ -11,7 +11,7 @@
           <span class="compassNav-item__skill">Vue | NodeJs | Express</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/pc/main/home" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/pc/" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
@@ -24,7 +24,7 @@
           <span class="compassNav-item__skill">Vue | WebRTC | face-api.js | node-zip</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/h5/" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">

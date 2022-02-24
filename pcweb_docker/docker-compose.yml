@@ -1,0 +1,12 @@
+version: '3'
+services:                                      # 集合
+  pc-web-01:
+    user: root                                 # 为了避免一些权限问题 在这我使用了root
+    restart: always                            # 重启方式
+    image: pc-web                 # 指定服务所使用的镜像 在这里我选择了 LTS (长期支持)
+    container_name: pc-web-01                    # 容器名称
+    ports:                                     # 对外暴露的端口定义
+      - 8090:80
+    volumes:
+      - /var/vol_dockers/nginx/nginx.conf/:/etc/nginx/nginx.conf
+      # - /var/vol_dockers/nginx/html:/usr/share/nginx/html

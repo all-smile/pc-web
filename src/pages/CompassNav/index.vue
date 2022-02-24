@@ -77,7 +77,10 @@
           ✨Go进程管理平台，进行启停操作、查看日志等
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/supervisor/" target="_blank">👉点击访问</a>
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问(备用网站)</a>
         </p>
       </div>
       <div class="compassNav-item">

@@ -11,7 +11,7 @@
           <span class="compassNav-item__skill">Vue | NodeJs | Express</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/pc/main/home" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
@@ -93,8 +93,26 @@
           <span class="compassNav-item__skill">Go</span>
         </p>
         <p class="compassNav-item__typeName">
-          暂未部署上线，敬请期待
+          暂未部署上线，敬请期待🔊
           <!-- <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问</a> -->
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">语雀文档</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨杂货铺,日常积累学习,心得体会
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://www.yuque.com/allblue-byynd" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">Gitee</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨代码仓库
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://gitee.com/hey-u" target="_blank">👉点击访问</a>
         </p>
       </div>
     </div>

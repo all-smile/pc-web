@@ -1,8 +1,9 @@
 .compassNav {
   width: 100%;
   height: 100%;
+  min-width: 900px;
   padding: 50px;
-  overflow: hidden;
+  overflow: auto;
   box-sizing: border-box;
   background: url("./img/grow_up.jpg") no-repeat;
   background-size: contain;
@@ -19,18 +20,23 @@
     -webkit-filter: blur(3px);
     filter: blur(3px);
   }
+  &__ware {
+    display: inline-block;
+    width: 33%;
+  }
   &__content {
     // display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
     position: relative;
     z-index: 2;
+    font-size: 0;
     .compassNav-item {
       display: inline-block;
       vertical-align: top;
-      width: 300px;
-      height: 160px;
-      flex: 1;
+      width: calc(33% - 50px);
+      height: 150px;
+      // flex: 1;
       overflow: hidden;
       padding: 11px 15px;
       position: relative;
@@ -39,7 +45,7 @@
       margin-bottom: 25px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
       border-radius: 8px;
-      &:nth-last-of-type(1) {
+      &:nth-of-type(3n + 0) {
         margin-right: 0;
         margin-bottom: 0;
       }

@@ -50,7 +50,7 @@
           <span class="compassNav-item__skill">Go | PostgreSQl</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8088/" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">

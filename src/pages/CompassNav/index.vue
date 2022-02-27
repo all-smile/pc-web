@@ -115,6 +115,19 @@
           <a class="compassNav-item__link text-hover" href="https://gitee.com/hey-u" target="_blank">👉点击访问</a>
         </p>
       </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">学生成绩管理系统</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨刚开始编程的时候练手的小项目，可以录入查看学生成绩信息，后来主要在里面写接口玩
+        </p>
+        <p class="compassNav-item__typeName">
+          🎨技术栈：
+          <span class="compassNav-item__skill">NodeJs | MongoDB | Express | log4js | PM2</span>
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:3000/" target="_blank">👉点击访问</a>
+        </p>
+      </div>
     </div>
   </div>
 </template>

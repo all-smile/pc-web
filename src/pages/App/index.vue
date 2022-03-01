@@ -35,7 +35,8 @@ export default {
 </style>
 <style lang='less' rel='stylesheet/less' scoped>
 .App {
-  background-color: #fff;
+  // background-color: #fff;
+  background: #32c2e5;
   width: 100%;
   height: 100%;
 }

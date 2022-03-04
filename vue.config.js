@@ -8,6 +8,7 @@ const resolve = (dir) => path.join(__dirname, dir);
 console.log('NODE_ENV===', process.env.NODE_ENV);
 console.log('VUE_APP_PATH===', process.env.VUE_APP_PATH);
 console.log('IS_PROD===', IS_PROD);
+console.log('VUE_APP_STATIC===', process.env.VUE_APP_STATIC);
 
 module.exports = {
   publicPath: IS_PROD ? process.env.VUE_APP_PATH : '/',  // 公共路径

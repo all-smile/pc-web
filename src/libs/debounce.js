@@ -8,7 +8,7 @@ function coloring() {
   let r = Math.floor(Math.random() * 255)
   let g = Math.floor(Math.random() * 255)
   let b = Math.floor(Math.random() * 255)
-  document.querySelector(".App").style.background = `rgb(${r},${g},${b})`
+  document.querySelector(".home").style.background = `rgb(${r},${g},${b})`
 }
 
 // 防抖（延迟，自动门原理）

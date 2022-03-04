@@ -5,7 +5,6 @@
 
 
 function coloring() {
-  console.log(111);
   let r = Math.floor(Math.random() * 255)
   let g = Math.floor(Math.random() * 255)
   let b = Math.floor(Math.random() * 255)
@@ -13,7 +12,7 @@ function coloring() {
 }
 
 // 防抖（延迟，自动门原理）
-var debounce = function (fn, delay, immediate = false) {
+var debounce = function (fn, delay) {
   let timer
   var context, args;
   var pre = 0
@@ -26,22 +25,17 @@ var debounce = function (fn, delay, immediate = false) {
 
   return function () {
     // 闭包
-    console.log("pre", pre, timer);
+    // console.log("pre", pre, timer);
     context = this
     args = arguments
-    if (!timer) {
-      if (immediate) {
-        fn.apply(context, args)
-      }
-    }
     let now = new Date().getTime()
     if (now - pre < delay) {
-      console.log("reset");
+      // console.log("reset");
       clearTimeout(timer)
       timer = null
       run()
     } else {
-      console.log("set");
+      // console.log("set");
       run()
     }
     pre = now
@@ -49,7 +43,7 @@ var debounce = function (fn, delay, immediate = false) {
 }
 
 function stdout() {
-  console.log("防抖输出");
+  console.log("🔊防抖输出");
 }
 
 // 节流
@@ -62,10 +56,11 @@ var throttle = function (fn, delay) {
       return
     }
     timer = setTimeout(() => {
+      console.log("🔊节流变色");
       fn.apply(context, args)
       timer = null
     }, delay)
   }
 }
-// window.addEventListener('resize', throttle(coloring, 1000))
-window.addEventListener('resize', debounce(stdout, 1000, true))
+window.addEventListener('resize', throttle(coloring, 1000))
+window.addEventListener('resize', debounce(stdout, 1000))

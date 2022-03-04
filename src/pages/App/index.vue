@@ -23,7 +23,9 @@ export default {
   computed: {},
   watch: {},
   created() { },
-  mounted() { },
+  mounted() {
+    console.log("");
+  },
   methods: {},
   updated() { },
   beforeDestroy() { }

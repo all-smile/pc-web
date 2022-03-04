@@ -17,10 +17,12 @@
 
 <script>
 // import "@/libs/newBind.js";
-import "@/libs/cloneFn.js";
+import "@/libs/curry.js";
+// import "@/libs/cellDivision.js";
+// import "@/libs/cloneFn.js";
 import "@/libs/debounce.js";
-import "@/libs/myPromise.js";
-import "@/libs/arrSort.js";
+// import "@/libs/myPromise.js";
+// import "@/libs/arrSort.js";
 import { getMixed, arrayInclude, arrayIncludeV2 } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'
 import ThemePick from '@components/ThemePick/index'

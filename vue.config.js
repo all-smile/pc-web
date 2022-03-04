@@ -23,7 +23,7 @@ module.exports = {
   chainWebpack: config => {
     config.plugin('html')
       .tap(args => {
-        args[0].title = '挨打日记'
+        args[0].title = 'xiao的调色板🎨'
         return args
       })
     // 引入less全局变量
@@ -129,9 +129,11 @@ module.exports = {
       // ]),
       // gzip 压缩
       new CompressionPlugin({
-        test: /\.(js|css|html)?$/i,     // 压缩文件格式
+        test: /\.(js|css|html|svg)?$/i,     // 压缩文件格式
         filename: '[path].gz[query]',   // 压缩后的文件名
         algorithm: 'gzip',              // 使用gzip压缩
+        threshold: 10240, //对10K以上的数据进行压缩
+        deleteOriginalAssets: false, //是否删除原文件
         minRatio: 0.8                   // 压缩率小于1才会压缩
       }),
       // 代码压缩

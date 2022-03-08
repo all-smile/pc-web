@@ -1,9 +1,16 @@
 const path = require('path');
-const JavaScriptObfuscator = require('webpack-obfuscator');
+// const JavaScriptObfuscator = require('webpack-obfuscator');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 代码压缩
 const CompressionPlugin = require('compression-webpack-plugin') // gzip压缩，配合nginx
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
+const { chalk } = require('@vue/cli-shared-utils')
 const resolve = (dir) => path.join(__dirname, dir);
+
+const smp = new SpeedMeasurePlugin();
 
 console.log('NODE_ENV===', process.env.NODE_ENV);
 console.log('VUE_APP_PATH===', process.env.VUE_APP_PATH);
@@ -59,6 +66,8 @@ module.exports = {
     // set svg loader
     config.module.rule("svg").exclude.add(resolve("src/assets/icons")).end();
     config.module.rule("icons")
+      // .use('cache-loader')
+      // .loader('cache-loader')
       .test(/\.svg$/)
       .include.add(resolve("src/assets/icons"))
       .end()
@@ -108,7 +117,7 @@ module.exports = {
       },
     }
   },
-  configureWebpack: IS_PROD ? {
+  configureWebpack: smp.wrap(IS_PROD ? {
     plugins: [
       // new JavaScriptObfuscator({
       //   // 压缩,无换行
@@ -149,7 +158,17 @@ module.exports = {
         cache: false, //是否启用文件缓存，默认缓存在node_modules/.cache/uglifyjs-webpack-plugin.目录
         sourceMap: false,
         parallel: true // 使用多进程并行运行来提高构建速度。默认并发运行数：os.cpus().length - 1。
+      }),
+      new HardSourceWebpackPlugin(),
+      new ProgressBarPlugin({
+        format: ' build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
+        clear: false
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: "static", // server
+        analyzerPort: "7000",
+        openAnalyzer: false
       })
     ]
-  } : {},
+  } : {}),
 }

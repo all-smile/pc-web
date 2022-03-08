@@ -17,10 +17,11 @@
 
 <script>
 // import "@/libs/newBind.js";
-import "@/libs/curry.js";
+import "@/libs/test.js";
+// import "@/libs/curry.js";
 // import "@/libs/cellDivision.js";
 // import "@/libs/cloneFn.js";
-import "@/libs/debounce.js";
+// import "@/libs/debounce.js";
 // import "@/libs/myPromise.js";
 // import "@/libs/arrSort.js";
 import { getMixed, arrayInclude, arrayIncludeV2 } from '@/libs/utils'

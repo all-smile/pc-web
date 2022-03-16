@@ -1,5 +1,6 @@
 cd $(dirname $0)
 pwd
+ls
 # npm install -g yarn
 # yarn
 # # 清理缓存

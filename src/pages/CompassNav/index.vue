@@ -54,7 +54,7 @@
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">Dockers Hub</span>
+        <span class="compassNav-item__count text-hover">Docker Hub</span>
         <p class="compassNav-item__typeName clamp_3">
           ✨镜像管理仓库
         </p>

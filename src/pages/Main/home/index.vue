@@ -17,7 +17,7 @@
 
 <script>
 // import "@/libs/newBind.js";
-import "@/libs/test.js";
+// import "@/libs/test.js";
 // import "@/libs/curry.js";
 // import "@/libs/cellDivision.js";
 // import "@/libs/cloneFn.js";

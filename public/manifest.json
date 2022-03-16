@@ -1,0 +1,13 @@
+{
+    "name": "xiao的调色板",
+    "short_name": "调色板",
+    "display": "standalone",
+    "start_url": "/",
+    "icons": [{
+        "src": "/logo.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }],
+    "background_color": "#aaa",
+    "theme_color": "#aaa"
+}

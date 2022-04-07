@@ -537,3 +537,53 @@ export const throttle = function (func, duration) {
     }
   }
 }
+
+
+/**
+ * 批注圆点色彩
+ */
+export const commentsColor = flag => {
+  let colors = [
+    '#909399',
+    '#FF7165',
+    '#5EA3F6',
+    '#FFB735',
+    '#37CBE3',
+    '#8BD867',
+    '#9B80F2',
+    '#763626',
+    '#FD8EC4',
+    '#BFBF17'
+  ]
+  return 'color:' + colors[flag - 1]
+}
+
+export function getUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    let r = Math.random() * 16 | 0
+    let v = c == 'x' ? r : (r & 0x3 | 0x8)
+    return v.toString(16)
+  })
+}
+
+/**
+ * 标签背景色
+ */
+let tagsBgColors = [
+  '#FF7165',
+  '#5EA3F6',
+  '#FFB735',
+  '#37CBE3',
+  '#8BD867',
+  '#9B80F2',
+  '#763626',
+  '#FD8EC4',
+  '#BFBF17',
+  '#909399',
+  '#D0021B'
+]
+
+export const tagsBgColor = colorId => {
+  let str = 'color:#fff;background-color:'
+  return str + tagsBgColors[colorId - 1]
+}

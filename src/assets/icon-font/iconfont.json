@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1120929",
+      "name": "delet",
+      "font_class": "delete",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1305463",
+      "name": "查看",
+      "font_class": "view",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "14476525",
+      "name": "txt",
+      "font_class": "txt",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "14476526",
+      "name": "excel",
+      "font_class": "excel",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "14476527",
+      "name": "PPT",
+      "font_class": "ppt",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "14476528",
+      "name": "word",
+      "font_class": "docx",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "17810983",
+      "name": "css",
+      "font_class": "css",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "17810996",
+      "name": "html",
+      "font_class": "html",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "17811008",
+      "name": "zip",
+      "font_class": "zip",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "17811016",
+      "name": "js",
+      "font_class": "js",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "22910189",
+      "name": "md",
+      "font_class": "md",
+      "unicode": "e803",
+      "unicode_decimal": 59395
+    },
+    {
       "icon_id": "23923192",
       "name": "棒球",
       "font_class": "color_baseball",

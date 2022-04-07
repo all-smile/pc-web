@@ -18,17 +18,19 @@
         <div class="files-ware">
           <ul v-if="filesList.length > 0">
             <li v-for="(item, index) in filesList" :key="index">
-              <!-- <file-show :item="item"></file-show> -->
+              <file-show :item="item"></file-show>
               <div class="descr">
                 <div class="name" :title="item.name">{{item.name}}</div>
                 {{`${item.size}k`}}
               </div>
-              <!-- <div class="viewburs hidden">
-                            <i class="iconfont icon-search-dot" @click="willPreView(filesList, index)"></i>
-                        </div>
-                        <span class="buts hidden">
-                            <i class="iconfont icon-del" @click="delThis(item.ossKey, index, 2)"></i>
-                        </span> -->
+              <div class="viewburs hidden">
+                <svg-icon icon-class="view" @click="willPreView(filesList, index)" />
+                <!-- <i class="iconfont icon-view" @click="willPreView(filesList, index)"></i> -->
+              </div>
+              <span class="buts hidden">
+                <svg-icon icon-class="delete" @click="delThis(index)" />
+                <!-- <i class="iconfont icon-delete" @click="delThis(item.ossKey, index, 2)"></i> -->
+              </span>
             </li>
           </ul>
         </div>
@@ -37,6 +39,7 @@
       <div class="record-submit">
         <el-button type="primary" :loading="isLoading" @click="submitForm(1)">提交</el-button>
       </div>
+      <doc-preview v-if="isPreView" ref="filePreview"></doc-preview>
     </div>
   </div>
 </template>
@@ -45,21 +48,22 @@
 import axios from 'axios'
 import SparkMD5 from "spark-md5"
 import { fileUpload } from '@/api/global/api.js'
-// import DocPreview from '@/components/DocPreview/index'
+import DocPreview from '@/components/DocPreview/index'
 // import FileuploadDialog from '@/basecomponents/FileuploadDialog/index' // 资源上传及进度条插件
-// import FileShow from '@/components/FileUpload/FileShow/index'
+import FileShow from '@/components/FileUpload/FileShow/index'
 export default {
   name: 'upload-file',
   props: {},
   components: {
     // 'fileupload-dialog': FileuploadDialog,
-    // 'doc-preview': DocPreview,
-    // 'file-show': FileShow,
+    'doc-preview': DocPreview,
+    'file-show': FileShow,
   },
   data() {
     return {
       isUpload: false,
       isLoading: false,
+      isPreView: false,
       imgsList: [],
       filesList: [],
       chunkSize: 2 * 1024 * 1024, // 每个chunk的大小，设置为2兆
@@ -125,6 +129,17 @@ export default {
       } else if (n === 2) {
         document.getElementById('oFile').click()
       }
+    },
+    // 删除当前条
+    delThis(index) {
+      this.filesList.splice(index, 1)
+      this.oriData = []
+    },
+    willPreView(imgsList, index) {
+      this.isPreView = true
+      this.$nextTick(() => {
+        this.$refs.filePreview && this.$refs.filePreview.show(imgsList, index, 0)
+      })
     },
     changeFile(ref, m) {
       this.uploadContent = ref

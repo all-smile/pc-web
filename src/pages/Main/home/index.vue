@@ -66,6 +66,11 @@ export default {
     setTimeout(() => {
       this.isLoading = false
     }, 1000)
+    console.log('this.deviceReady()', this.deviceReady());
+    this.deviceReady().then((res) => {
+      console.log(res) // ready go!
+      JSAPI.showToast(0, '提示')
+    })
   },
   methods: {
     onThemeChange(val) {

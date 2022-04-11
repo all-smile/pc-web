@@ -150,5 +150,14 @@ export default {
         return -1;//不是ie浏览器
       }
     },
+
+    // 模拟 Cordova 框架 deviceready事件
+    deviceReady() {
+      return new Promise((resolve) => {
+        window.addEventListener('deviceready', function () {
+          resolve("ready go!")
+        }, false);
+      })
+    }
   }
 }

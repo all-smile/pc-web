@@ -13,6 +13,8 @@ import IconColor from '@/components/icon-color/index'
 import './assets/icons' // icon
 // import './router/permission'
 
+import '@/libs/mockEvent.js'
+
 // 自定义指令
 import './directive'
 

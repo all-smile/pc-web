@@ -12,6 +12,7 @@ import './assets/icon-font/iconfont.js'
 import IconColor from '@/components/icon-color/index'
 import './assets/icons' // icon
 // import './router/permission'
+import customFn from "./libs/customFn";
 
 import '@/libs/mockEvent.js'
 
@@ -20,6 +21,7 @@ import './directive'
 
 Vue.use(Element, { size: 'small' });
 Vue.use(IconColor) // 注册全局 iconfont 组件
+Vue.use(customFn)
 // 引入全局mixin
 import mixins from "@/mixins/index.js";
 Vue.mixin(mixins);

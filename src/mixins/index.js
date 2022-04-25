@@ -158,6 +158,25 @@ export default {
           resolve("ready go!")
         }, false);
       })
+    },
+
+    // 事件封装
+    receiver(type) {
+      let callbacks = {
+        fns: [],
+        then: function (cb) {
+          this.fns.push(cb)
+          return this
+        }
+      }
+      window.addEventListener(type, function (ev) {
+        let fns = callbacks.fns.slice()
+        for (let i = 0, l = fns.length; i < l; i++) {
+          fns[i].call(this, ev)
+        }
+      });
+
+      return callbacks
     }
   }
 }

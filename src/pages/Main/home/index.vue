@@ -66,11 +66,14 @@ export default {
     setTimeout(() => {
       this.isLoading = false
     }, 1000)
-    console.log('this.deviceReady()', this.deviceReady());
-    this.deviceReady().then((res) => {
-      console.log(res) // ready go!
-      JSAPI.showToast(0, '提示')
-    })
+    // console.log('this.deviceReady()', this.deviceReady());
+    // console.log('this.deviceReady()====', this.deviceReady());
+    // this.deviceReady().then((res) => {
+    //   console.log(res) // ready go!
+    //   JSAPI.showToast(0, '提示')
+    // })
+    this.receiver('deviceready').then((ev) => { console.log(ev); })
+    this.receiver('click').then(() => { console.log('click'); })
   },
   methods: {
     onThemeChange(val) {

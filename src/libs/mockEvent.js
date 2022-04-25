@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === 'development') {
 
   // 在 原生 load 方法之后 触发自定义事件
   window.addEventListener('load', function () {
-    console.log('load OK!');
     setTimeout(() => {
       window.dispatchEvent(myEvent);
     }, 100)

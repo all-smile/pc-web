@@ -35,6 +35,23 @@ const routes = [
     ]
   },
   {
+    path: '/main/document-struct',
+    name: 'DocumentStruct',
+    component: () => import('@/pages/Main/document-struct/index'),
+    children: [ // bizfield
+      {
+        path: 'bizfield',
+        name: 'BizField',
+        meta: {
+          keepAlive: false,
+          title: '业务字段配置'
+        },
+        component: () => import('@/pages/Main/document-struct/bizfield')
+      },
+      NoPage
+    ]
+  },
+  {
     path: '/main/tools/html2pdf',
     name: 'Html2Pdf',
     component: () => import('@/pages/Main/tools/html2pdf/index'),

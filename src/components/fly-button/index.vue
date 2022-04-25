@@ -9,7 +9,7 @@
         <span class="iconBox transition_all">
           <IconColor iconName="hamburger"></IconColor>
         </span>
-        <span class="text">汉堡</span>
+        <span class="text">单据架构</span>
       </div>
       <div class="list remind" @click="plusClick(2)">
         <span class="iconBox transition_all">
@@ -104,6 +104,9 @@ export default {
       }
       if (id !== 0) {
         switch (id) {
+          case 1:
+            this.$router.push('/main/document-struct/bizfield')
+            break;
           case 5:
             this.$router.push('/main/tools/uploadFile')
             break;

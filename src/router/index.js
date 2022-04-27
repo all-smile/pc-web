@@ -48,6 +48,24 @@ const routes = [
         },
         component: () => import('@/pages/Main/document-struct/bizfield')
       },
+      {
+        path: 'customer',
+        name: 'Customer',
+        meta: {
+          keepAlive: false,
+          title: '客户档案'
+        },
+        component: () => import('@/pages/Main/document-struct/customer')
+      },
+      {
+        path: 'goods',
+        name: 'Goods',
+        meta: {
+          keepAlive: false,
+          title: '商品档案'
+        },
+        component: () => import('@/pages/Main/document-struct/goods')
+      },
       NoPage
     ]
   },

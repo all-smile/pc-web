@@ -1,11 +1,11 @@
 cd $(dirname $0)
 pwd
-ls
+# ls
 # npm install -g yarn
 # yarn
 # # 清理缓存
-# rm -rf node_modules/.cache
-# rm -rf dist
+rm -rf node_modules/.cache
+rm -rf dist
 # 打包
 npm run build
 # 进入打包目录

@@ -587,3 +587,40 @@ export const tagsBgColor = colorId => {
   let str = 'color:#fff;background-color:'
   return str + tagsBgColors[colorId - 1]
 }
+
+export const isPc = () => {
+  const ua = navigator.userAgent
+  const moveDevices = [
+    "Android",
+    "iPhone",
+    "SymbianOS",
+    "Windows Phone",
+    "iPad",
+    "iPod"
+  ]
+  let flag = true;
+  for (let i = 0; i < moveDevices.length; i++) {
+    if (ua.indexOf(moveDevices[i]) !== -1) {
+      flag = false;
+      break
+    }
+  }
+  return flag
+}
+
+export const closeCurWebPage = () => {
+  if (!isPc()) {
+    window.opener = null
+    window.open("about:blank", "_self", "").close()
+  }
+  if (navigator.userAgent.indexOf(Firefox) !== -1 || navigator.userAgent.indexOf("Chrome") !== -1) {
+    // 浏览器键入url方式打开的网页
+    window.location.href = "about:blank"
+    window.close()
+  } else {
+    // 脚本打开的网页
+    window.opener = null
+    window.open("about:blank", "_self", "")
+    window.close()
+  }
+}

@@ -12,6 +12,8 @@ const resolve = (dir) => path.join(__dirname, dir);
 
 const smp = new SpeedMeasurePlugin();
 
+let timeStamp = new Date().getTime();
+
 console.log('NODE_ENV===', process.env.NODE_ENV);
 console.log('VUE_APP_PATH===', process.env.VUE_APP_PATH);
 console.log('IS_PROD===', IS_PROD);
@@ -118,6 +120,10 @@ module.exports = {
     }
   },
   configureWebpack: smp.wrap(IS_PROD ? {
+    // output: { // 输出重构 打包编译后的js文件名称,添加时间戳.
+    //   filename: `js[name].${timeStamp}.js`,
+    //   chunkFilename: `js[name].${timeStamp}.js`,
+    // },
     plugins: [
       // new JavaScriptObfuscator({
       //   // 压缩,无换行

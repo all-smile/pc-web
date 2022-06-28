@@ -41,6 +41,19 @@ export default {
       }
       return t.split('').reverse().join('') + r
     },
+
+    // 金额增加千分位分割
+    // console.log(format_with_regex(1243250.99));
+    formatMoneyWithReg(number) {
+      return !(number + '').includes('.')
+        ? // 就是说1-3位后面一定要匹配3位
+        (number + '').replace(/\d{1,3}(?=(\d{3})+$)/g, (match) => {
+          return match + ',';
+        })
+        : (number + '').replace(/\d{1,3}(?=(\d{3})+(\.))/g, (match) => {
+          return match + ',';
+        });
+    },
     getSize(size) {
       if (size > 1024) {
         return parseFloat(size / 1024).toFixed(2) + ' M'

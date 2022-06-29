@@ -27,8 +27,8 @@ Function.prototype.newBind = function (o) {
 }
 
 function person(a, b, c) {
-  console.log(this.name);
-  console.log("abc", a, b, c);
+  console.log('this.name=', this.name);
+  console.log("abc=", a, b, c);
 }
 person.prototype.collection = "收藏"
 

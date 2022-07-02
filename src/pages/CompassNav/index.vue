@@ -28,16 +28,40 @@
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">WebRTC H5</span>
+        <span class="compassNav-item__count text-hover">语雀文档</span>
         <p class="compassNav-item__typeName clamp_3">
-          ✨主要用来练习掌握WebRTC相关知识
+          ✨杂货铺,日常积累学习,心得体会
+        </p>
+        <p class="compassNav-item__typeName"><strong>🧨有大量干货</strong></p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://www.yuque.com/allblue-byynd" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">个人掘金</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          🎨技术栈：
-          <span class="compassNav-item__skill">React | WebRTC | Antd</span>
+          <a class="compassNav-item__link text-hover" href="https://juejin.cn/user/852876755212814" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">个人简书</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://www.jianshu.com/u/a59c678b26df" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">个人博客(WordPress)</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨主要用来对外输出经验\知识
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8000/" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
@@ -93,17 +117,8 @@
           <span class="compassNav-item__skill">Go</span>
         </p>
         <p class="compassNav-item__typeName">
-          暂未部署上线，敬请期待🔊
+          🔊暂未部署上线，敬请期待
           <!-- <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问</a> -->
-        </p>
-      </div>
-      <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">语雀文档</span>
-        <p class="compassNav-item__typeName clamp_3">
-          ✨杂货铺,日常积累学习,心得体会
-        </p>
-        <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.yuque.com/allblue-byynd" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
@@ -113,6 +128,15 @@
         </p>
         <p class="compassNav-item__typeName">
           <a class="compassNav-item__link text-hover" href="https://gitee.com/hey-u" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">GitHub</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨代码仓库
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://github.com/all-smile" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
@@ -128,6 +152,20 @@
           <a class="compassNav-item__link text-hover" href="http://118.190.59.105:3000/" target="_blank">👉点击访问</a>
         </p>
       </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">WebRTC H5</span>
+        <p class="compassNav-item__typeName clamp_3">
+          ✨主要用来练习掌握WebRTC相关知识
+        </p>
+        <p class="compassNav-item__typeName">
+          🎨技术栈：
+          <span class="compassNav-item__skill">React | WebRTC | Antd</span>
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+
     </div>
   </div>
 </template>

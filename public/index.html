@@ -16,6 +16,17 @@
     <title>
         <%= htmlWebpackPlugin.options.title %>
     </title>
+    <script>
+        const timing = window.performance && window.performance.timing;
+        // 白屏时间
+        const whiteScreenTime = new Date().getTime() - performance.timing.navigationStart
+        console.log('whiteScreenTime=', whiteScreenTime);
+        // 首屏时间
+        window.onload = function() {
+            const firstScreenTime = new Date().getTime() - performance.timing.navigationStart
+            console.log('firstScreenTime=', firstScreenTime);
+        }
+    </script>
 </head>
 
 <body>

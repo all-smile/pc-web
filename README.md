@@ -52,3 +52,25 @@ git commit 的类型
 - [Docker-从入门到实践](https://www.yuque.com/allblue-byynd/dtez1l)
 - [DevOps](https://www.yuque.com/allblue-byynd/ezv40n)
 - [Nginx](https://www.yuque.com/allblue-byynd/lisfg2)
+
+
+
+## 说明
+
+该仓库是GitHub、Gitee同步仓库，同时配置了两个remote（默认的remote是origin）
+```
+git remote -v
+gitee   git@gitee.com:hey-u/pc-web.git (fetch)
+gitee   git@gitee.com:hey-u/pc-web.git (push)
+github  git@github.com:all-smile/pc-web.git (fetch)
+github  git@github.com:all-smile/pc-web.git (push)
+```
+推送到远端的时候，要使用
+- git push gitee `<branch name>`
+- git push github `<branch name>`
+
+eg:
+```
+git push github master
+git push gitee master
+```

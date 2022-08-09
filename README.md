@@ -1,4 +1,5 @@
 ## PC端项目
+[![OSCS Status](https://www.oscs1024.com/platform/badge/all-smile/pc-web.svg?size=small)](https://www.oscs1024.com/project/all-smile/pc-web?ref=badge_small)
 内容包括：
 - PC端开发的常用工具函数、公共组件、基础项目配置
 - 一些技术实现 (文件切片上传、断点续传; html转pdf; 文件预览; 接口参数加解密等等)

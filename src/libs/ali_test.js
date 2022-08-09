@@ -19,7 +19,7 @@
 
 console.log(myCalculator(121).add(1).minus(2)); */
 
-/* // 2.
+// 2.
 function observer(obj, path, cb) {
   // your code
   path.forEach((key) => {
@@ -42,7 +42,7 @@ function observer(obj, path, cb) {
       }
       // value = obj[key];
       // console.log("key", key);
-      // console.log("obj", obj);
+      console.log("obj", obj);
 
       Object.defineProperty(obj, key, {
         get() {
@@ -76,14 +76,14 @@ observer(o, ['a',"c.x"], (v, prev) => {
 o.a = 2; // 2, 1
 // o.b = 3; // 不打印
 o.c.x = 3; // 3, 1
-o.c.y = 3; // 不打印 */
+o.c.y = 3; // 不打印
 
 
 
 
 // 3.
 // 1 ，1 ，2 ，3 ，5 ，8， 13 ，21 ，......
-const fbn = (n) => {
+/* const fbn = (n) => {
   if (n == 1 || n == 2) {
 		return 1
   } else {
@@ -124,4 +124,4 @@ function getIndexByNum(num) {
   return index
 }
 
-console.log('fbn-index=', getIndexByNum(8))
+console.log('fbn-index=', getIndexByNum(8)) */

@@ -21,3 +21,46 @@
   //   filter: blur(10px);
   // }
 }
+
+// lessc index.less index.css
+@A01: #4760f0;
+@A02: #ff7249;
+@A03: #9c60fd;
+@A04: #49deff;
+@A05: #7da1fe;
+
+.loopSymbol(@count) when (@count > 0) {
+  .loopSymbol((@count - 1));
+  .symbol-A0@{count} {
+    // background: '@{A0@{count}}';
+    @id:'A0@{count}';
+    background: @@id;
+  }
+}
+
+
+.loopSymbol(5);
+
+
+// //定义
+// .intro-loop(@n, @i:1) when (@i <= @n) {
+//   .intro-@{i} {
+//       img {
+//           background-image: url("../images/intro-@{i}.jpg");
+//       }
+//   }
+//   .intro-loop(@n, (@i + 1));
+// }
+// //调用
+// .introduction {
+//   .intro-loop(4);
+// }
+
+//下面是less官方文档给的循环实例，其实实际上这就是递归调用
+// .loop(@counter) when (@counter > 0) {
+//   .loop((@counter - 1));
+//   .name {
+//     width: (10px + @counter);
+//   }
+// }
+

@@ -1,2 +1,19 @@
 .customer {
+  .card_view {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    &-card {
+      border-radius: 8px;
+      cursor: pointer;
+      height: 36px;
+      position: relative;
+      margin-left: 16px;
+      margin-top: 16px;
+    }
+    &-item {
+      flex: 0 0 16.66%;
+    }
+  }
 }

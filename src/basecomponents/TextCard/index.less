@@ -1,0 +1,31 @@
+.textCard {
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: aqua;
+  height: 36px;
+  position: relative;
+  margin-right: 16px;
+  margin-top: 16px;
+  color: #333;
+  .card-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 8px 14px;
+    border-radius: 8px;
+    line-height: 20px;
+    box-sizing: border-box;
+  }
+  &:hover {
+    .card-name {
+      color: #fff;
+      white-space: normal !important;
+      overflow: unset !important;
+      background-color: aqua;
+      box-shadow: 0 6px 200px rgba(71, 96, 240, 0.2);
+      z-index: 9;
+    }
+  }
+}

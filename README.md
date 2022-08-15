@@ -76,5 +76,14 @@ git push github master
 git push gitee master
 ```
 
+- 增加脚本
+```
+"push": "git push github master && git push gitee master"
+```
+- 推送
+```
+npm run push
+```
+
 ## GitHub Actions
 > 增加 .github\workflows

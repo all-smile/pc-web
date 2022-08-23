@@ -1,6 +1,8 @@
 <template>
   <div class="textCard">
     <div class="ellipsis card-name">{{cardData.name}}</div>
+    <!-- 箭头通过自定义指令控制 -->
+    <i v-moreIcon class="el-icon-arrow-down icon_down"></i>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 .textCard {
   border-radius: 8px;
   cursor: pointer;
-  background-color: aqua;
+  background-color: chartreuse;
   height: 36px;
   position: relative;
   margin-right: 16px;
@@ -12,20 +12,38 @@
     top: 0;
     left: 0;
     display: inline-block;
-    width: 100%;
-    padding: 8px 14px;
+    max-width: calc(100% - 20px);
+    // width: 100%;
+    padding: 8px 0 8px 14px;
     border-radius: 8px;
     line-height: 20px;
     box-sizing: border-box;
   }
   &:hover {
     .card-name {
-      color: #fff;
       white-space: normal !important;
       overflow: unset !important;
-      background-color: aqua;
-      box-shadow: 0 6px 200px rgba(71, 96, 240, 0.2);
+      background-color: chartreuse;
+      box-shadow: 0 6px 20px rgba(72, 88, 183, 0.2);
       z-index: 9;
+      width: 100%;
+      max-width: unset !important;
+      padding-right: 14px;
     }
+    .icon_down {
+      z-index: 10;
+      transform: translateY(-50%) rotate(180deg);
+      transition: transform 0.1s;
+    }
+  }
+  .icon_down {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transform-origin: center;
+    width: 20px;
+    font-size: 12px;
+    text-align: center;
   }
 }

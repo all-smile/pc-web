@@ -6,7 +6,7 @@
         <card :cardData="{name:card.name}"></card>
       </div>
     </div>
-    <vxe-table :align="left" :data="tableData">
+    <vxe-table :data="tableData">
       <vxe-column type="seq" width="60"></vxe-column>
       <vxe-column field="name" title="Name"></vxe-column>
       <vxe-column field="sex" title="Sex"></vxe-column>
@@ -33,10 +33,10 @@ export default {
       ],
       listData: Object.freeze([
         {
-          name: '阿三发射点无法支付的'
+          name: '阿三发射点'
         },
         {
-          name: '阿三发射点无法支付的'
+          name: '阿三'
         },
         {
           name: '阿三发射点无法支付的'

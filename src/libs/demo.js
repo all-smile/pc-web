@@ -58,7 +58,7 @@ const testobj1 = new testV8(100, 200);
 // 打印 testobj1 详细的运行时信息
 // %DebugPrint(testobj1);
 
-console.log("===============================");
+// console.log("===============================");
 // const testArr = [1, "hello", true, function () {
 //   return 1;
 // }];

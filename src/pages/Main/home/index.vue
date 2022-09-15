@@ -73,8 +73,8 @@ export default {
     //   console.log(res) // ready go!
     //   JSAPI.showToast(0, '提示')
     // })
-    this.receiver('deviceready').then((ev) => { console.log(ev); })
-    this.receiver('click').then(() => { console.log('click'); })
+    // this.receiver('deviceready').then((ev) => { console.log(ev); })
+    // this.receiver('click').then(() => { console.log('click'); })
   },
   methods: {
     onThemeChange(val) {

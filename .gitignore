@@ -24,7 +24,4 @@ static/language/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.vscode
-package-lock.json
-yarn.lock
 *.zip

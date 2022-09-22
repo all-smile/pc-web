@@ -95,3 +95,9 @@ npm run push
 2. history
    - `src\router\index.js` 修改 `mode` 参数
    - `.env.prod` VUE_APP_PATH='./' 改成 VUE_APP_PATH='/pc/'
+
+## 版本问题
+
+- node V12.13.0
+
+如果升级node会造成依赖库安装失败，谨慎尝试

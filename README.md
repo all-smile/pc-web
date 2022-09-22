@@ -87,3 +87,11 @@ npm run push
 
 ## GitHub Actions
 > 增加 .github\workflows
+
+## 路由模式
+1. hash
+   - `src\router\index.js` 修改 `mode` 参数
+   - `.env.prod` VUE_APP_PATH='/pc/' 改成 VUE_APP_PATH='./'
+2. history
+   - `src\router\index.js` 修改 `mode` 参数
+   - `.env.prod` VUE_APP_PATH='./' 改成 VUE_APP_PATH='/pc/'

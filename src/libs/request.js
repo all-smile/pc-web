@@ -39,11 +39,11 @@ const instance = axios.create({
   timeout: 10 * 1000,
   transformRequest: [
     function (data, headers) {
-      console.log("transformRequest data = ", data);
-      console.log("transformRequest headers = ", headers);
+      // console.log("transformRequest data = ", data);
+      // console.log("transformRequest headers = ", headers);
       if (isObject(data)) {
         // 一、请求参数加密
-        if (process.env.VUE_APP_RUNTIME === 'prod123') {
+        if (process.env.VUE_APP_RUNTIME === 'prod') {
           data = JSON.stringify(data)
           headers["keyCipher"] = rsaEncrypt(aesKey) // 传输 aes key 密文
           data = aesEncrypt(data) // 加密请求参数
@@ -55,13 +55,13 @@ const instance = axios.create({
   ],
   transformResponse: [
     function (data, headers) {
-      console.log("transformResponse data = ", data);
-      console.log("transformResponse headers = ", headers);
+      // console.log("transformResponse data = ", data);
+      // console.log("transformResponse headers = ", headers);
       if (isString(data)) {
         try {
           // 先对 axios 返回的源数据处理
           data = JSON.parse(data)
-          console.log("data=====", data);
+          // console.log("data=====", data);
           /**
            * 二、获取响应数据之后解密
            * 判断 headers.keycipher 是否需要解密 (后端在接口报错的情况下，直接返回的是明文，不对错误信息加密)
@@ -75,11 +75,12 @@ const instance = axios.create({
             const dataStr = aesDecrypt(data, resAesKey) || '{}'
             data = JSON.parse(dataStr)
           }
-          console.log("res data ====", data);
+          // console.log("res data ====", data);
         } catch (err) {
           console.log("transformResponse-err", err);
         }
       }
+      return data
     }
   ]
 })
@@ -191,14 +192,14 @@ instance.interceptors.response.use(response => {
     /* 超时处理
     无法通过判断是否存在 timeout 字符，来确定服务是否连接超时
     因为 error 信息里包含请求的 config 信息，里面配置的 timeout 字段 */
-    if (JSON.stringify(error).toLocaleLowerCase().includes('timeout')) {
-      Message.error('服务器响应超时，请刷新当前页');
-    } else {
-      Message({
-        message: '连接服务器失败',
-        type: "error"
-      })
-    }
+    // if (JSON.stringify(error).toLocaleLowerCase().includes('timeout')) {
+    //   Message.error('服务器响应超时，请刷新当前页');
+    // } else {
+    //   Message({
+    //     message: '连接服务器失败',
+    //     type: "error"
+    //   })
+    // }
   }
 
   /***** 处理结束 *****/

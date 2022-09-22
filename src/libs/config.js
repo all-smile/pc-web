@@ -18,7 +18,7 @@ export const RES_OK = 'OK'
 export const accessToken = 'accessToken'
 
 // 是否启用本地假数据
-export const inUseMockdata = false
+export const inUseMockdata = true
 
 // aes key
 export const aesKey = 'abcdef0123456789'

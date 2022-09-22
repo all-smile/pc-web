@@ -12,7 +12,7 @@ export function fileUpload(params, option = {}) {
 export function getListAPI(params) {
   const api = {
     url: 'getListAPI',
-    mockUrl: './mock_data/getListAPI.json'
+    mockUrl: './mock/getListAPI.json'
   }
   return http.get(api, params)
 }
@@ -23,4 +23,12 @@ export function userLogin(params, option = {}) {
     mockUrl: ''
   }
   return http.post(api, params, option)
+}
+
+export function fetchListData(params) {
+  const api = {
+    url: 'getListAPI',
+    mockUrl: './mock/listData.json'
+  }
+  return http.get(api, params)
 }

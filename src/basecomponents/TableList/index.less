@@ -1,0 +1,83 @@
+@rowHeight: 60px;
+@rowBgColor: #fff;
+@defaultTextColor: #434b7b;
+@titleTextColor: #777e90;
+@defaultTextSize: 14px;
+@titleTextSize: 12px;
+@mainColor: #4760f0;
+@rowRadius: 16px;
+@rowTitleRadius: 16px;
+@rowGap: 16px;
+@rowTitleHeight: 34px;
+@specialFieldColor: #e4596c;
+.nodata {
+  line-height: 60px;
+  color: #93979c;
+  text-align: center;
+}
+.ware-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.listV2_row {
+  height: @rowHeight;
+  background: @rowBgColor;
+  color: @defaultTextColor;
+  font-size: @defaultTextSize;
+  padding-left: 20px;
+  border-radius: @rowRadius;
+  box-sizing: 0 0 20px rgba(72,88,183,0.1);
+  margin-bottom: @rowGap;
+  border: 1px solid @rowBgColor;
+  .ware-flex;
+
+  &-title {
+    height: @rowTitleHeight;
+    border: @rowTitleRadius;
+    box-shadow: 0 0 20px rgba(72,88,183,0.1);
+    background: @rowBgColor;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-size: @titleTextSize;
+    color: @titleTextColor;
+    .ware-flex;
+    .listV2_cell {
+      padding: 10px;
+      flex: 1;
+    }
+  }
+
+  &:hover {
+    .listV2_cell:nth-child(1)::before {
+      background: @mainColor;
+    }
+    border: 1px solid @mainColor;
+  }
+  .listV2_cell {
+    padding: 10px;
+    flex: 1;
+    &-red {
+      color: @specialFieldColor;
+    }
+    &:nth-child(1) {
+      position: relative;
+      font-weight: 700;
+      &::before {
+        position: absolute;
+        display: inline-block;
+        content: '';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 12px;
+        background: #ccc;
+        border-radius: 16px;
+        box-shadow: 0 6px 200px rgba(71,96,240,0.2);
+      }
+    }
+  }
+}

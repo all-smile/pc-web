@@ -15,7 +15,7 @@
         <span class="iconBox transition_all">
           <IconColor iconName="sausage"></IconColor>
         </span>
-        <span class="text">香肠</span>
+        <span class="text">wiki导航</span>
       </div>
       <div class="list contacts" @click="plusClick(3)">
         <span class="iconBox transition_all">
@@ -106,6 +106,9 @@ export default {
         switch (id) {
           case 1:
             this.$router.push('/main/document-struct/bizfield')
+            break;
+          case 2:
+            this.$router.push('/compassNav')
             break;
           case 5:
             this.$router.push('/main/tools/uploadFile')

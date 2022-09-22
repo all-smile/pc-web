@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="pragram" content="no-cache"><meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"><meta http-equiv="expires" content="0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="https://www.i-xiao.space/static/favicon.ico"><link async rel="stylesheet" href="./iconfont.css"><title>xiao的调色板🎨</title><script>const timing = window.performance && window.performance.timing;
+        // 白屏时间
+        const whiteScreenTime = new Date().getTime() - performance.timing.navigationStart
+        console.log('whiteScreenTime=', whiteScreenTime);
+        // 首屏时间
+        window.onload = function() {
+            const firstScreenTime = new Date().getTime() - performance.timing.navigationStart
+            console.log('firstScreenTime=', firstScreenTime);
+        }
+
+        ;
+        (function() {
+
+            handleAddListener('load', getTiming)
+
+            function handleAddListener(type, fn) {
+                if (window.addEventListener) {
+                    window.addEventListener(type, fn)
+                } else {
+                    window.attachEvent('on' + type, fn)
+                }
+            }
+
+            function getTiming() {
+                try {
+                    var time = performance.timing;
+                    var timingObj = {};
+
+                    var loadTime = (time.loadEventEnd - time.loadEventStart) / 1000;
+
+                    // console.log('time===', time, loadTime);
+                    // if (loadTime < 0) {
+                    //     setTimeout(function() {
+                    //         getTiming();
+                    //     }, 200);
+                    //     return;
+                    // }
+
+                    timingObj['重定向时间'] = (time.redirectEnd - time.redirectStart) / 1000;
+                    timingObj['DNS解析时间'] = (time.domainLookupEnd - time.domainLookupStart) / 1000;
+                    timingObj['TCP完成握手时间'] = (time.connectEnd - time.connectStart) / 1000;
+                    timingObj['HTTP请求响应完成时间'] = (time.responseEnd - time.requestStart) / 1000;
+                    timingObj['DOM开始加载前所花费时间'] = (time.responseEnd - time.navigationStart) / 1000;
+                    timingObj['DOM加载完成时间'] = (time.domComplete - time.domLoading) / 1000;
+                    timingObj['首屏到达时间'] = (new Date().getTime() - timing.navigationStart) / 1000;
+                    timingObj['DOM结构解析完成时间'] = (time.domInteractive - time.domLoading) / 1000;
+                    timingObj['脚本加载时间'] = (time.domContentLoadedEventEnd - time.domContentLoadedEventStart) / 1000;
+                    // timingObj['onload事件时间'] = (time.loadEventEnd - time.loadEventStart) / 1000;
+                    timingObj['页面完全加载时间'] = (timingObj['重定向时间'] + timingObj['DNS解析时间'] + timingObj['TCP完成握手时间'] + timingObj['HTTP请求响应完成时间'] + timingObj['DOM结构解析完成时间'] + timingObj['DOM加载完成时间']);
+
+                    for (item in timingObj) {
+                        console.log(item + ":" + timingObj[item] + '秒(s)');
+                    }
+
+                    // console.log(performance.timing);
+
+                } catch (e) {
+                    console.log(timingObj)
+                    console.log(performance.timing);
+                }
+            }
+        })();</script><link href="css/chunk-028b1aaa.20eaf912.css" rel="prefetch"><link href="css/chunk-2e1a71bc.51b40454.css" rel="prefetch"><link href="css/chunk-42672763.1820672a.css" rel="prefetch"><link href="css/chunk-4de4e22c.e132bb6c.css" rel="prefetch"><link href="css/chunk-50d65456.ea63fd83.css" rel="prefetch"><link href="css/chunk-56f9260a.38fca08c.css" rel="prefetch"><link href="css/chunk-6467c07a.7494f6e4.css" rel="prefetch"><link href="css/chunk-70775104.3593183a.css" rel="prefetch"><link href="css/chunk-7aed42d4.4d5b5a57.css" rel="prefetch"><link href="css/chunk-7d271393.1cf37b18.css" rel="prefetch"><link href="js/chunk-028b1aaa.74fd9f21.js" rel="prefetch"><link href="js/chunk-2d216214.ce9e8464.js" rel="prefetch"><link href="js/chunk-2dfa2ad2.19907166.js" rel="prefetch"><link href="js/chunk-2e1a71bc.bfdd341d.js" rel="prefetch"><link href="js/chunk-42672763.dc96864e.js" rel="prefetch"><link href="js/chunk-4de4e22c.4a7c1502.js" rel="prefetch"><link href="js/chunk-50d65456.cb68e076.js" rel="prefetch"><link href="js/chunk-56f9260a.8b984379.js" rel="prefetch"><link href="js/chunk-6467c07a.d7ada3fd.js" rel="prefetch"><link href="js/chunk-6bf136d8.7af25fbd.js" rel="prefetch"><link href="js/chunk-70775104.a1ad1c17.js" rel="prefetch"><link href="js/chunk-7aed42d4.88d7218f.js" rel="prefetch"><link href="js/chunk-7d271393.28c578ee.js" rel="prefetch"><link href="css/app.647c2a0c.css" rel="preload" as="style"><link href="css/chunk-vendors.91c5cb2a.css" rel="preload" as="style"><link href="js/app.d950d557.js" rel="preload" as="script"><link href="js/chunk-vendors.bf1f35d8.js" rel="preload" as="script"><link href="css/app.647c2a0c.css" rel="stylesheet"><link href="css/chunk-vendors.91c5cb2a.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but xiao的调色板🎨 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="js/app.d950d557.js"></script><script src="js/chunk-vendors.bf1f35d8.js"></script></body></html>

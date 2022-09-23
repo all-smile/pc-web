@@ -12,7 +12,7 @@
       <vxe-column field="sex" title="Sex"></vxe-column>
       <vxe-column field="age" title="Age"></vxe-column>
     </vxe-table>
-    <table-list v-loading="p_loading" :tableData="p_listdata" :fieldList="fieldList"></table-list>
+    <table-list class="table_list" v-loading="p_loading" :tableData="p_listdata" :fieldList="fieldList"></table-list>
   </div>
 </template>
 

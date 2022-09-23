@@ -17,17 +17,17 @@ export default {
       const data = this.listdata;
       data.forEach((item) => {
         // ...
+        // jsx 方式，打标签
         if (item.status === 2 || item.status === 3) {
-          // jsx 方式，打标签
           item.status = <span style={{color: '#999'}}>停售</span>
         } else {
           item.status = item.status
         }
         if (item.age <= 25) {
-          item.age = <span style={{ color: '#4760f0' }}>{item.age}</span>
+          item.age = <span class="badge_info">{item.age}</span>
         }
         if (item.sex === 'Man') {
-          item.sex = <span style={{ color: '#4760f0' }}>{item.sex}</span>
+          item.sex = <span class="badge_default">{item.sex}</span>
         }
       })
       return data;

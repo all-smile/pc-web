@@ -1,4 +1,5 @@
 [![OSCS Status](https://www.oscs1024.com/platform/badge/all-smile/pc-web.svg?size=small)](https://www.oscs1024.com/project/all-smile/pc-web?ref=badge_small)
+[![GitHub Pages](https://github.com/all-smile/pc-web/actions/workflows/pages.yml/badge.svg)](https://github.com/all-smile/pc-web/actions/workflows/pages.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e688259-1308-497b-b72e-7fd8a568f415/deploy-status)](https://app.netlify.com/sites/pcweb/deploys)
 
 **预览地址：**

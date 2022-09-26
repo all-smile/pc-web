@@ -1,6 +1,13 @@
-## PC端项目
 [![OSCS Status](https://www.oscs1024.com/platform/badge/all-smile/pc-web.svg?size=small)](https://www.oscs1024.com/project/all-smile/pc-web?ref=badge_small)
-内容包括：
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e688259-1308-497b-b72e-7fd8a568f415/deploy-status)](https://app.netlify.com/sites/pcweb/deploys)
+
+**预览地址：**
+
+- 主站地址: https://web.i-xiao.space/ （Netlify）
+- 备用地址: https://home.i-xiao.space/pc-web/ （GitHub Pages）
+## PC端项目
+
+**内容包括：**
 - PC端开发的常用工具函数、公共组件、基础项目配置
 - 一些技术实现 (文件切片上传、断点续传; html转pdf; 文件预览; 接口参数加解密等等)
 - 个人网站导航页面、登录页面
@@ -98,6 +105,7 @@ npm run push
 
 ## 版本问题
 
-- node V12.13.0
+- ~~node V12.13.0~~
+- 已更新到： 16.14.1
 
 如果升级node会造成依赖库安装失败，谨慎尝试

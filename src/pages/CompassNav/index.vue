@@ -70,21 +70,39 @@
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">个人掘金</span>
+        <span class="compassNav-item__count text-hover">掘金</span>
         <p class="compassNav-item__typeName clamp_2">
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://juejin.cn/user/852876755212814" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://juejin.cn/user/852876755212814/posts" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">个人简书</span>
+        <span class="compassNav-item__count text-hover">CSDN博客</span>
         <p class="compassNav-item__typeName clamp_2">
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.jianshu.com/u/a59c678b26df" target="_blank">👉点击访问</a>
+          <a class="compassNav-item__link text-hover" href="https://blog.csdn.net/heyYouU?type=blog" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">知乎</span>
+        <p class="compassNav-item__typeName clamp_2">
+          ✨主要用来对外输出经验\知识
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://www.zhihu.com/people/xiaojt_95/posts" target="_blank">👉点击访问</a>
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">博客园博客</span>
+        <p class="compassNav-item__typeName clamp_2">
+          ✨主要用来对外输出经验\知识
+        </p>
+        <p class="compassNav-item__typeName">
+          <a class="compassNav-item__link text-hover" href="https://www.cnblogs.com/all-smile" target="_blank">👉点击访问</a>
         </p>
       </div>
       <div class="compassNav-item">

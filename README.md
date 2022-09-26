@@ -3,8 +3,8 @@
 
 **预览地址：**
 
-- 主站地址: https://web.i-xiao.space/ （Netlify）
-- 备用地址: https://home.i-xiao.space/pc-web/ （GitHub Pages）
+- 主站地址: https://web.i-xiao.space/
+- 备用地址: https://home.i-xiao.space/pc-web/
 ## PC端项目
 
 **内容包括：**
@@ -54,9 +54,11 @@ git commit 的类型
 - workflow: 工作流相关文件修改
 
 ## 相关链接
-[个人网站导航](https://www.i-xiao.space/pc/compassNav)
+个人博客
+- 主站地址：https://blog.i-xiao.space/
+- 备用地址：https://m.i-xiao.space/
 
-个人语雀文档：
+个人语雀文档**精选**：
 - [Docker-从入门到实践](https://www.yuque.com/allblue-byynd/dtez1l)
 - [DevOps](https://www.yuque.com/allblue-byynd/ezv40n)
 - [Nginx](https://www.yuque.com/allblue-byynd/lisfg2)

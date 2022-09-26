@@ -111,3 +111,10 @@ npm run push
 - 已更新到： 16.14.1
 
 如果升级node会造成依赖库安装失败，谨慎尝试
+
+---
+
+**文档**
+
+- [Netlify Docs](https://docs.netlify.com/)
+- [GitHub Pages](https://docs.github.com/cn/pages/getting-started-with-github-pages)

@@ -4,6 +4,8 @@
       <el-tab-pane label="客户档案" name="first">客户档案</el-tab-pane>
       <el-tab-pane label="商品档案" name="second">商品档案</el-tab-pane>
     </el-tabs>
+    <div class="clamp_2 test">撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式</div>
+    <!-- <img width="800" height="400" src="http://www.360fc.cn/webfile//upload/2018/07-05/11-19-3605561054126152.JPEG" alt="http img"> -->
   </div>
 </template>
 

@@ -49,7 +49,9 @@
 .clamp_fun(@line: 1) {
   overflow: hidden;
   text-overflow: ellipsis;
+  /* autoprefixer: off*/
   -webkit-box-orient: vertical;
+  /* autoprefixer: on*/
   display: -webkit-box;
   -webkit-line-clamp: @line;
 }
@@ -293,7 +295,7 @@
 
 .badge_info {
   color: #4760f0;
-  background: #1C84C6;
+  background: #1c84c6;
   padding: 5px 8px;
   color: #fff;
   border-radius: 5px;

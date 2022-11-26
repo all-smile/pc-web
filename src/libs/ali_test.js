@@ -19,6 +19,7 @@
 
 console.log(myCalculator(121).add(1).minus(2)); */
 
+/*
 // 2.
 function observer(obj, path, cb) {
   // your code
@@ -79,19 +80,59 @@ o.c.x = 3; // 3, 1
 o.c.y = 3; // 不打印
 
 
-
+*/
 
 // 3.
-// 1 ，1 ，2 ，3 ，5 ，8， 13 ，21 ，......
-/* const fbn = (n) => {
+// 1 ，1 ，2 ，3 ，5 ，8， 13 ，21 ，34 ......
+
+const fbn = (n) => {
   if (n == 1 || n == 2) {
 		return 1
   } else {
 		return fbn(n-2) + fbn(n-1)
 	}
 }
-console.log('fbn(n)=', fbn(5))
+console.time('fbn')
+console.log('fbn(40)=', fbn(40))
+console.timeEnd('fbn')
 
+// 利用数组记录过往的值，直接使用，避免重复计算
+const fbn2 = (n) => {
+  let arr = new Array(n + 1); // 定义 n + 1 长度的数组
+  arr[1] = 1;
+  arr[2] = 1;
+  for (let i = 3; i <= n; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2]
+  }
+  return arr[n]
+}
+
+console.time('fbn2')
+console.log('fbn2(40)=', fbn2(40))
+console.timeEnd('fbn2')
+
+
+const fbn3 = (n) => {
+  if (n === 1 || n === 2) {
+    return 1;
+  }
+  let pre1 = 1 // pre1，pre2记录前面两项
+  let pre2 = 1
+  let tmp = ''
+
+  for (let i = 3; i <= n; i++) {
+    tmp = pre1 + pre2 // 2
+    pre1 = pre2 // 1
+    pre2 = tmp // 2
+  }
+  return pre2
+}
+
+console.time('fbn3')
+console.log('fbn3(40)=', fbn3(40))
+console.timeEnd('fbn3')
+
+/*
 
 function getIndexByNum(num) {
   if (num < 1) {
@@ -124,4 +165,5 @@ function getIndexByNum(num) {
   return index
 }
 
-console.log('fbn-index=', getIndexByNum(8)) */
+console.log('fbn-index=', getIndexByNum(8))
+*/

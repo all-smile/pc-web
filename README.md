@@ -95,6 +95,11 @@ git push gitee master
 npm run push
 ```
 
+- 查看webpack配置
+```
+vue inspect > output.js
+```
+
 ## GitHub Actions
 > 增加 .github\workflows
 

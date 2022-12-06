@@ -25,11 +25,13 @@
 // import "@/libs/myPromise.js";
 // import "@/libs/arrSort.js";
 import "@/libs/demo.js";
-import { getMixed, arrayInclude, arrayIncludeV2 } from '@/libs/utils'
+import { getMixed, arrayInclude, arrayIncludeV2, isExistFile } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'
 import ThemePick from '@components/ThemePick/index'
 // import SnapshotSandbox from "@/libs/sandbox.js";
 // import ProxySandbox from "@/libs/sandbox02.js";
+
+console.log('isExistFile:',isExistFile('./test.png'));
 export default {
   name: 'home',
   props: {},

@@ -14,6 +14,7 @@ const whitelist = [
 ]
 
 router.beforeEach((to, from, next) => {
+  console.log(to);
   try {
     nProgress.start()
     // let accessTokenStr = getToken()[accessToken]

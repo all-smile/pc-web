@@ -24,6 +24,7 @@
 // import "@/libs/debounce.js";
 // import "@/libs/myPromise.js";
 // import "@/libs/arrSort.js";
+import "@/libs/arr2tree.js";
 import "@/libs/demo.js";
 import { getMixed, arrayInclude, arrayIncludeV2, isExistFile } from '@/libs/utils'
 import FlyButton from '@components/fly-button/index'

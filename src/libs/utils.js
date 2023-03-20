@@ -2,8 +2,6 @@ import defaultSettings from "@/settings/index";
 
 const { title = "" } = defaultSettings || {};
 
-const root = path.join(__dirname, '../');
-
 export const isExistFile = (filename) => {
   console.log("filepath, filename", window.XMLHttpRequest);
   if (!filename) {

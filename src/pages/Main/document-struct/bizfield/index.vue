@@ -6,23 +6,29 @@
     </el-tabs>
     <div class="clamp_2 test">撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式</div>
     <!-- <img width="800" height="400" src="http://www.360fc.cn/webfile//upload/2018/07-05/11-19-3605561054126152.JPEG" alt="http img"> -->
+    <span>{{calculateCreateTime("2023-04-22 10:00")}}</span>
   </div>
 </template>
 
 <script>
+import {calculateCreateTime} from "@/libs/cus-moment.js"
+console.log('calculateCreateTime', calculateCreateTime);
 export default {
   name: 'bizfield',
   props: {},
   components: {},
   data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      calculateCreateTime: calculateCreateTime
     }
   },
   computed: {},
   watch: {},
   created() { },
-  mounted() { },
+  mounted() {
+    // console.log('calculateCreateTime===>', calculateCreateTime('2023-04-22 10:00:05.0'));
+  },
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);

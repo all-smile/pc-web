@@ -754,3 +754,88 @@ export function romanToInt(s) {
   }
   return result;
 }
+
+// 小于10,在前面补0
+export const addZero = function (i) {
+  return (i < 10 ? "0" : "") + i;
+};
+// 根据某日获取该日的周一和周日日期 param: yyyy-MM-dd, return: array
+export const getMonDayAndSunDay = function (dateValue) {
+  try {
+    let arr = dateValue.split("-");
+    // 月份-1 因为月份从0开始 构造一个Date对象
+    let date = new Date(arr[0], arr[1] - 1, arr[2]);
+    let dateOfWeek = date.getDay(); // 返回当前日期的在当前周的某一天（0～6--周日到周一）
+    let dateOfWeekInt = parseInt(dateOfWeek, 10); // 转换为整型
+    if (dateOfWeekInt == 0) dateOfWeekInt = 7; // 如果是周日
+    let aa = 7 - dateOfWeekInt; // 当前于周末相差的天数
+    let temp2 = parseInt(arr[2], 10); // 按10进制转换，以免遇到08和09的时候转换成0
+    let sunDay = temp2 + aa; // 当前日期的周日的日期
+    let monDay = sunDay - 6; // 当前日期的周一的日期
+    let startDate = new Date(arr[0], arr[1] - 1, monDay);
+    let endDate = new Date(arr[0], arr[1] - 1, sunDay);
+    let sm = addZero(parseInt(startDate.getMonth()) + 1); // 月份+1 因为月份从0开始
+    let em = addZero(parseInt(endDate.getMonth()) + 1);
+    let start =
+      startDate.getFullYear() + "-" + sm + "-" + addZero(startDate.getDate());
+    let end =
+      endDate.getFullYear() + "-" + em + "-" + addZero(endDate.getDate());
+    let result = [];
+    result.push(start);
+    result.push(end);
+    return result;
+  } catch (err) {
+    console.log("getMonDayAndSunDay-err");
+    return ["", ""];
+  }
+};
+// 获取当前日期所在月份第一天日期
+export const getCurrentMonthFirst = function () {
+  try {
+    var date = new Date();
+    date.setDate(1);
+    var month = addZero(parseInt(date.getMonth() + 1));
+    var day = addZero(date.getDate());
+    return date.getFullYear() + "-" + month + "-" + day;
+  } catch (err) {
+    console.log("getCurrentMonthFirst-err");
+    return "";
+  }
+};
+// 获取当前日期所在月份最后一天日期
+export const getCurrentMonthLast = function () {
+  try {
+    var date = new Date();
+    var currentMonth = date.getMonth();
+    var nextMonth = ++currentMonth;
+    var nextMonthFirstDay = new Date(date.getFullYear(), nextMonth, 1);
+    var oneDay = 1000 * 60 * 60 * 24;
+    var lastTime = new Date(nextMonthFirstDay - oneDay);
+    var month = addZero(parseInt(lastTime.getMonth() + 1));
+    var day = addZero(lastTime.getDate());
+    return date.getFullYear() + "-" + month + "-" + day;
+  } catch (err) {
+    console.log("getCurrentMonthLast-err");
+    return "";
+  }
+};
+
+// 获取本周的开始日期
+export function getWeekStartDate(now) {
+  const nowYear = now.getFullYear(); // 当前年
+  const nowMonth = now.getMonth(); // 当前月
+  const nowDayOfWeek = now.getDay(); // 今天是本周的第几天
+  const nowDay = now.getDate(); // 当前日
+  const weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek + 1);
+  return weekStartDate;
+}
+
+// 获取本周的结束日期
+export function getWeekEndDate(now) {
+  const nowYear = now.getFullYear(); // 当前年
+  const nowMonth = now.getMonth(); // 当前月
+  const nowDayOfWeek = now.getDay(); // 今天是本周的第几天
+  const nowDay = now.getDate(); // 当前日
+  const weekEndDate = new Date(nowYear, nowMonth, nowDay + (7 - nowDayOfWeek));
+  return weekEndDate;
+}

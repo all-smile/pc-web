@@ -1,15 +1,32 @@
 <template>
-  <div class="query_control" :class="{'query_control-padding': !dontAddPadding && isAddPadding}">
+  <div
+    class="query_control"
+    :class="{ 'query_control-padding': !dontAddPadding && isAddPadding }"
+  >
     <template v-for="(item, index) in onControlGroup">
-      <div :key="index" v-show="!item.noShow" :style="{width: item.column ? (1 / item.column) * 100 + '%' : ''}" class="com-item">
-        <component ref="control" v-bind:is="`control-${item.controlName}`" :fieldLabel="item.fieldLabel" :itemData="item" :nameId="item.filedName" :controlData.sync="item.controlData" @handleRelatedFields="handleRelatedFields" @handleFieldsShow="handleFieldsShow"></component>
+      <div
+        :key="index"
+        v-show="!item.noShow"
+        :style="{ width: item.column ? (1 / item.column) * 100 + '%' : '' }"
+        class="com-item"
+      >
+        <component
+          ref="control"
+          v-bind:is="`control-${item.controlName}`"
+          :fieldLabel="item.fieldLabel"
+          :itemData="item"
+          :nameId="item.filedName"
+          :controlData.sync="item.controlData"
+          @handleRelatedFields="handleRelatedFields"
+          @handleFieldsShow="handleFieldsShow"
+        ></component>
       </div>
     </template>
   </div>
 </template>
 
 <script>
-import Controls from '@/base-compontents/Controls/index.js';
+import Controls from '@/basecompontents/Controls/index.js';
 export default {
   name: 'query-control',
   props: {
@@ -34,6 +51,8 @@ export default {
           labelPosition: 'right',
           isNotNull: 0,
           placeholder: '',
+          format: 'yyyy-MM-dd', // 日期组件格式
+          valueFormat: 'yyyy-MM-dd', // 日期组件格式
           keyCode: 'dictCode', // 下拉框option文字是否展示 dictCode
           controlSize: '100%', // 百分比，用来控制查询条件一行显示字段的个数
           column: '1', // 一行显示几列 (1 / column) * 100 + '%' // 默认值 3 即一行默认显示3列
@@ -43,6 +62,7 @@ export default {
           editable: false, // 是否可以输入（日期组件）
           multiple: true, // 是否可以多选
           noShow: true, // 字段级别的显隐控制
+          // controlType: 'textarea',
         }
       ]
     },
@@ -151,17 +171,55 @@ export default {
         }
       })
       return this.paramsObj
+    },
+
+    // 相关字段逻辑处理
+    handleRelatedFields(data, fieldStr) {
+      const fieldList = fieldStr.split(';')
+      fieldList.forEach(ele => {
+        if (ele != '') {
+          const fieldItems = ele.split('=')
+          if (fieldItems[0] && fieldItems[1] && this.$refs.control) {
+            this.$refs.control.forEach(item => {
+              if (item.$attrs.nameId === fieldItems[0]) {
+                if (fieldItems[0] === 'platformCheckStatus') {
+                  item.itemData.readonly = data[fieldItems[1]]
+                  if (data[fieldItems[0]]) {
+                    item.initVal && item.initVal({
+                      [item.$attrs.nameId]: ''
+                    })
+                  }
+                } else {
+                  item.initVal({
+                    [item.$attrs.nameId]: data[fieldItems[1]]
+                  })
+                }
+              }
+            })
+          }
+        }
+      })
+    },
+
+    // 控制相关字段显隐 - 业务消息推送权限配置，根据业务类型展示不同的字段
+    handleFieldShow(strVal = '') {
+
     }
   },
   updated() { },
   beforeDestroy() { },
-  beforeRouteLeave(to, from, next) {
-    next()
-  }
 }
 </script>
 
 <style lang='less' rel='stylesheet/less' scoped>
-@import "./zh-cn.less";
-@import "./en.less";
+.query_control {
+  &.query_control-padding {
+    padding-bottom: 47px;
+  }
+  .com-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3%;
+  }
+}
 </style>

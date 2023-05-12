@@ -4,15 +4,16 @@
       <el-tab-pane label="客户档案" name="first">客户档案</el-tab-pane>
       <el-tab-pane label="商品档案" name="second">商品档案</el-tab-pane>
     </el-tabs>
-    <div class="clamp_2 test">撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式</div>
+    <div class="clamp_2 test">
+      撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式撒旦发射点范德萨打发士大夫士大夫首发式
+    </div>
     <!-- <img width="800" height="400" src="http://www.360fc.cn/webfile//upload/2018/07-05/11-19-3605561054126152.JPEG" alt="http img"> -->
-    <span>{{calculateCreateTime("2023-04-22 10:00")}}</span>
+    <el-input v-model="name" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
 <script>
-import {calculateCreateTime} from "@/libs/cus-moment.js"
-console.log('calculateCreateTime', calculateCreateTime);
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'bizfield',
   props: {},
@@ -20,18 +21,38 @@ export default {
   data() {
     return {
       activeName: 'first',
-      calculateCreateTime: calculateCreateTime
     }
   },
-  computed: {},
+  computed: {
+    ...mapGetters(['userInfo']),
+    name: {
+      get() {
+        return this.$store.state.userInfo.name
+      },
+      set(value) {
+        console.log('set-value', value);
+        this.$store.commit('SET_USERINFO', {
+          name: value
+        })
+        // this.SET_USERINFO({
+        //   name: value
+        // })
+      }
+    }
+  },
   watch: {},
   created() { },
   mounted() {
-    // console.log('calculateCreateTime===>', calculateCreateTime('2023-04-22 10:00:05.0'));
+    // console.log('userInfo', this.userInfo);
   },
   methods: {
+    ...mapMutations(['SET_USERINFO']),
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+
+    handleChange(val) {
+      console.log('handleChange', val);
     }
   },
   updated() { },

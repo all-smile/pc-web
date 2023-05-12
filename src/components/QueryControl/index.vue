@@ -43,7 +43,7 @@ export default {
           defaultValue: '',
           defaultOptions: '',
           localVuexDictData: true, // 下拉选择的时候option数据从vuex里面获取
-          dictKey: 'OperateTypeEnum', // vuex中的属性名
+          dictKey: 'OperateTypeEnum', // vuex中的属性名, 码值配置中的属性名
           remoteDictOptionsData: false, // 下拉选择的时候option数据从接口里面获取
           remoteOtherApi: '', // 下拉选择的时候option数据从接口里面获取，定义的api名称，采用策略模式（遵循传递尽可能少的原则，不采用props传递）
           labelWidth: '100px',
@@ -63,6 +63,7 @@ export default {
           multiple: true, // 是否可以多选
           noShow: true, // 字段级别的显隐控制
           // controlType: 'textarea',
+          noShowAll: false, // 下拉选择控件是否显示“全部”选项
         }
       ]
     },

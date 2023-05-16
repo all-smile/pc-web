@@ -1,6 +1,6 @@
 <template>
   <div class="goods">
-    goods
+    <el-button type="primary">新增商品</el-button>
   </div>
 </template>
 

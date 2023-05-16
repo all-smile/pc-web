@@ -1,15 +1,30 @@
 <template>
   <ul class="listV2">
     <li class="listV2_row-title">
-      <span v-for="(col, index) in fieldList" :key="index" class="listV2_cell ellipsis" :name="col.fieldName">
-        {{col.fieldLabel}}
+      <span
+        v-for="(col, index) in fieldList"
+        :key="index"
+        class="listV2_cell ellipsis"
+        :name="col.fieldName"
+      >
+        {{ col.fieldLabel }}
       </span>
     </li>
     <!-- 行 -->
     <div v-if="tableData.length === 0" class="nodata">暂无数据</div>
-    <li v-for="(row, index) in tableData" :key="index" class="listV2_row pointer" @click="rowClickToDetail(row)">
+    <li
+      v-for="(row, index) in tableData"
+      :key="index"
+      class="listV2_row pointer"
+      @click="rowClickToDetail(row)"
+    >
       <!-- 单元格-列 -->
-      <span v-for="(col, index) in fieldList" :key="index" class="listV2_cell ellipsis" :name="col.fieldName">
+      <span
+        v-for="(col, index) in fieldList"
+        :key="index"
+        class="listV2_cell ellipsis"
+        :name="col.fieldName"
+      >
         <render-dom :myvNode="row[col.fieldName] || '-'"></render-dom>
       </span>
     </li>
@@ -44,7 +59,11 @@ export default {
   watch: {},
   created() { },
   mounted() { },
-  methods: {},
+  methods: {
+    rowClickToDetail(item) {
+      console.log('rowClickToDetail===>', item);
+    }
+  },
   updated() { },
   beforeDestroy() { },
 }

@@ -12,7 +12,7 @@ import "./assets/icon-font/iconfont.js";
 import IconColor from "@/components/icon-color/index";
 import "./assets/icons"; // icon
 // import './router/permission'
-import customFn from "./libs/customFn";
+import customFn from "./libs/customFn"; // customFn \ myPlugin 一致
 import myPlugin from "./myPlugin";
 
 import "@/libs/mockEvent.js";
@@ -27,9 +27,9 @@ Vue.use(VXETable);
 import "./directive";
 
 Vue.use(myPlugin);
+Vue.use(customFn);
 Vue.use(Element, { size: "small" });
 Vue.use(IconColor); // 注册全局 iconfont 组件
-Vue.use(customFn);
 // 引入全局mixin
 import mixins from "@/mixins/index.js";
 Vue.mixin(mixins);

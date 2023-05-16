@@ -11,36 +11,16 @@
       :label="itemData.showLabel ? itemData.fieldLabel : ''"
       :prop="propName"
     >
-      <el-select
-        class="control"
-        v-model="controlForm.value"
-        value-key="dictCode"
-        :placeholder="itemData.placeholder || item.fieldLabel"
-        :disabled="isDisable"
-        :multiple="itemData.multiple"
-        filterable
-        clearable
-        @change="handleChange"
-        :style="{ width: itemData.rightWidth }"
-      >
-        <el-option
-          v-if="!itemData.noShowAll && !itemData.defaultOptions"
-          label="全部"
-          value=""
-          >全部</el-option
+      <el-radio-group v-model="controlForm.value" @change="handleChange">
+        <el-radio
+          v-for="item in options"
+          :key="item.dictCode"
+          class="radio_item"
+          :label="item.dictCode"
         >
-        <el-option
-          v-for="(item, index) in options"
-          :key="`${index}_${item.dictCode}`"
-          :label="
-            item.dictName + (itemData.keyCode ? `(${itemData.dictCode})` : '')
-          "
-          :title="
-            item.dictName + (itemData.keyCode ? `(${itemData.dictCode})` : '')
-          "
-          :value="item.dictCode"
-        ></el-option>
-      </el-select>
+          {{ `${item.dictName}（${item.dictNameDesc}）` }}
+        </el-radio>
+      </el-radio-group>
     </el-form-item>
   </el-form>
 </template>
@@ -48,26 +28,18 @@
 <script>
 import { mapGetters } from "vuex";
 import { isObject, isString, isArray } from '@/libs/utils'
-import { fetchHrmJob } from "@/api/index.js";
 import { fetchItem } from "@/api/index.js";
-
 export default {
-  name: 'Control-SelectDownBox',
+  name: 'Control-RadioGroup',
   props: {
     itemData: {
       type: Object,
-      default: () => ({
-        labelWidth: '100px',
-        rightWidth: '160px',
-      })
+      default: () => ({})
     }
   },
   components: {},
   data() {
     return {
-      apis: {
-        fetchHrmJob,
-      },
       options: Object.freeze([]),
       tempItemData: this.itemData,
       controlForm: {
@@ -77,7 +49,7 @@ export default {
         value: [
           {
             required: true,
-            message: `请选择${this.itemData.placeholder || this.itemData.fieldLabel}`,
+            message: `请输入${this.itemData.placeholder || this.itemData.fieldLabel}`,
             trigger: 'blur'
           }
         ]
@@ -106,7 +78,7 @@ export default {
       if (this.tempItemData.readonly) {
         flag = true
       }
-      return flag
+      return flag;
     }
   },
   watch: {
@@ -145,14 +117,7 @@ export default {
         if (res.status === 'OK') {
           const list = res.data || []
           if (Array.isArray(list)) {
-            this.options = list.map(item => {
-              return {
-                dictCode: item.jobCode,
-                dictName: item.jobName,
-                extra: null,
-                inUse: '1'
-              }
-            })
+            this.options = [...list]
           }
         } else {
           this.$message.error(res.message || '')
@@ -197,11 +162,6 @@ export default {
     initVal(obj = {}) {
       this.clearVerify();
       if (isObject(obj)) {
-        let tmp = obj[this.itemData.fieldName]
-        if (isString(tmp) && this.itemData.multiple) {
-          // 多选情况
-          tmp = tmp.split(',')
-        }
         this.controlForm.value = obj[this.itemData.fieldName]
         this.itemData.controlData = obj[this.itemData.fieldName]
       }
@@ -227,21 +187,9 @@ export default {
     },
 
     handleChange(val) {
-      let tmpV = val;
-      if (isArray(val)) {
-        tmpV = val.join(',')
-      }
-      if (this.itemData.fieldName === 'isNeedCheck') {
-        // isNeedCheck: 1-需要审核 0-不需要审核 （禁止选择平台审核结果字段，平台审核结果字段强制修改成全部）
-        if (this.itemData.relatedFields && this.itemData.relatedFields !== '') {
-          const info = {
-            platformCheckStatus: tmpV === '0'
-          }
-          this.$emit('handleRelatedFields', info, this.itemData.relatedFields)
-        }
-      }
-      this.itemData.controlData = tmpV
-      this.$emit('update:controlData', tmpV)
+      this.$emit('update:controlData', val)
+      this.itemData.controlData = val
+      this.$emit('handleFieldShow', `${[this.itemData.fieldName]}=${val}`); // checkId=quyCode 小程序权限配置切换字段展示
     },
 
     verifyForm() {

@@ -11,36 +11,33 @@
       :label="itemData.showLabel ? itemData.fieldLabel : ''"
       :prop="propName"
     >
-      <el-select
+      <el-cascader
         class="control"
         v-model="controlForm.value"
-        value-key="dictCode"
+        ref="cascader"
         :placeholder="itemData.placeholder || item.fieldLabel"
         :disabled="isDisable"
-        :multiple="itemData.multiple"
+        :props="{
+          checkStrictly: true,
+          value: 'id',
+          label: 'name',
+          emitPath: false,
+          multiple: itemData.multiple,
+        }"
+        :options="options"
         filterable
         clearable
+        :debounce="300"
         @change="handleChange"
         :style="{ width: itemData.rightWidth }"
       >
-        <el-option
-          v-if="!itemData.noShowAll && !itemData.defaultOptions"
-          label="全部"
-          value=""
-          >全部</el-option
-        >
-        <el-option
-          v-for="(item, index) in options"
-          :key="`${index}_${item.dictCode}`"
-          :label="
-            item.dictName + (itemData.keyCode ? `(${itemData.dictCode})` : '')
-          "
-          :title="
-            item.dictName + (itemData.keyCode ? `(${itemData.dictCode})` : '')
-          "
-          :value="item.dictCode"
-        ></el-option>
-      </el-select>
+        <template slot-scope="{ node, data }">
+          <span>{{ data.name }}</span>
+          <span v-if="!node.isLeaf"
+            >({{ data.children.length }}{{ optNode(node) }})</span
+          >
+        </template>
+      </el-cascader>
     </el-form-item>
   </el-form>
 </template>
@@ -52,14 +49,11 @@ import { fetchHrmJob } from "@/api/index.js";
 import { fetchItem } from "@/api/index.js";
 
 export default {
-  name: 'Control-SelectDownBox',
+  name: 'Control-SelectCascader',
   props: {
     itemData: {
       type: Object,
-      default: () => ({
-        labelWidth: '100px',
-        rightWidth: '160px',
-      })
+      default: () => ({})
     }
   },
   components: {},
@@ -129,6 +123,12 @@ export default {
     }
   },
   methods: {
+    optNode(node) {
+      if (node.children && node.children.length === 0) {
+        node.hasChildren = false
+      }
+    },
+
     // 从 vuex 字典中获取可选项数据
     getVuexDictData() {
       let arr = []
@@ -145,14 +145,7 @@ export default {
         if (res.status === 'OK') {
           const list = res.data || []
           if (Array.isArray(list)) {
-            this.options = list.map(item => {
-              return {
-                dictCode: item.jobCode,
-                dictName: item.jobName,
-                extra: null,
-                inUse: '1'
-              }
-            })
+            this.options = [...list]
           }
         } else {
           this.$message.error(res.message || '')
@@ -230,15 +223,6 @@ export default {
       let tmpV = val;
       if (isArray(val)) {
         tmpV = val.join(',')
-      }
-      if (this.itemData.fieldName === 'isNeedCheck') {
-        // isNeedCheck: 1-需要审核 0-不需要审核 （禁止选择平台审核结果字段，平台审核结果字段强制修改成全部）
-        if (this.itemData.relatedFields && this.itemData.relatedFields !== '') {
-          const info = {
-            platformCheckStatus: tmpV === '0'
-          }
-          this.$emit('handleRelatedFields', info, this.itemData.relatedFields)
-        }
       }
       this.itemData.controlData = tmpV
       this.$emit('update:controlData', tmpV)

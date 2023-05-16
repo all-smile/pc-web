@@ -27,5 +27,17 @@ const mutations = {
   [types.SET_PLATFORM](state, platform) {
     state.platform = platform;
   },
+  [types.SET_DICTINFO](state, dictInfo) {
+    state.dictInfo = dictInfo;
+  },
+  [types.SET_DICTOBJ](state, dictObj) {
+    state.dictObj = dictObj;
+  },
+  [types.SET_JOBLIST](state, jobList) {
+    state.jobList = jobList;
+  },
+  [types.SET_JOBOBJ](state, jobObj) {
+    state.jobObj = jobObj;
+  },
 };
 export default mutations;

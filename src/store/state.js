@@ -15,6 +15,10 @@ const state = {
   DPHQ("DPHQ","“伴零工”灵活用工平台项目");
    */
   platform: "", // 接入平台
+  dictInfo: {},
+  dictObj: {},
+  jobList: [],
+  jobObj: {},
 };
 
 export default state;

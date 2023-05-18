@@ -15,7 +15,7 @@
         class="control"
         v-model="controlForm.value"
         ref="cascader"
-        :placeholder="itemData.placeholder || item.fieldLabel"
+        :placeholder="itemData.placeholder || itemData.fieldLabel"
         :disabled="isDisable"
         :props="{
           checkStrictly: true,

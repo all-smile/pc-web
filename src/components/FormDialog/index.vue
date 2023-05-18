@@ -6,7 +6,6 @@
     :close-on-click-modal="false"
     v-dialogDrag
   >
-    <span>这是一段信息</span>
     <query-control
       v-loading="loading"
       ref="queryControl"
@@ -162,6 +161,4 @@ export default {
 </script>
 
 <style lang='less' rel='stylesheet/less' scoped>
-@import "./zh-cn.less";
-@import "./en.less";
 </style>

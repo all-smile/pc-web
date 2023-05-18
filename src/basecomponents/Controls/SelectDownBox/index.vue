@@ -15,7 +15,7 @@
         class="control"
         v-model="controlForm.value"
         value-key="dictCode"
-        :placeholder="itemData.placeholder || item.fieldLabel"
+        :placeholder="itemData.placeholder || itemData.fieldLabel"
         :disabled="isDisable"
         :multiple="itemData.multiple"
         filterable

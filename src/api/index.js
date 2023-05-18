@@ -1,5 +1,5 @@
 // 封装api
-import http from "../../libs/http";
+import http from "@/libs/http";
 
 export function fetchItem(params, option = {}) {
   const api = {
@@ -10,6 +10,14 @@ export function fetchItem(params, option = {}) {
 }
 
 export function fetchHrmJob(params) {
+  const api = {
+    url: "getListAPI",
+    mockUrl: "./mock/getListAPI.json",
+  };
+  return http.get(api, params);
+}
+
+export function fetchPhoneSms(params) {
   const api = {
     url: "getListAPI",
     mockUrl: "./mock/getListAPI.json",

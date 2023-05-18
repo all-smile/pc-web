@@ -12,7 +12,7 @@
     >
       <el-input
         class="control"
-        :placeholder="itemData.placeholder || item.fieldLabel"
+        :placeholder="itemData.placeholder || itemData.fieldLabel"
         v-model="controlForm.value"
         clearable
         :readonly="isDisable"

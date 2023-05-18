@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Controls from '@/basecompontents/Controls/index.js';
+import Controls from '@/basecomponents/Controls/index';
 export default {
   name: 'query-control',
   props: {
@@ -35,7 +35,7 @@ export default {
       default: () => [
         {
           showLabel: true,
-          filedLabel: '接口名称',
+          fieldLabel: '接口名称',
           filedName: 'rangeDate',
           controlName: 'SelectDownBox',
           controlData: '',
@@ -54,7 +54,7 @@ export default {
           format: 'yyyy-MM-dd', // 日期组件格式
           valueFormat: 'yyyy-MM-dd', // 日期组件格式
           keyCode: 'dictCode', // 下拉框option文字是否展示 dictCode
-          controlSize: '100%', // 百分比，用来控制查询条件一行显示字段的个数
+          controlSize: '100%', // 百分比，用来控制查询条件一行显示字段的个数 - 废弃，用 column 代替
           column: '1', // 一行显示几列 (1 / column) * 100 + '%' // 默认值 3 即一行默认显示3列
           readonly: false, // 是否禁用(下拉框没有只读，采取禁用方式)/只读
           relatedFields: 'platformCheckStatus=platformCheckStatus;optType=optType', // 关联字段逻辑实现， ';' 分隔
@@ -62,7 +62,7 @@ export default {
           editable: false, // 是否可以输入（日期组件）
           multiple: true, // 是否可以多选
           noShow: true, // 字段级别的显隐控制
-          // controlType: 'textarea',
+          controlType: 'textarea',
           noShowAll: false, // 下拉选择控件是否显示“全部”选项
         }
       ]
@@ -76,7 +76,7 @@ export default {
       default: '' // edit-编辑 add-新增
     }
   },
-  components: {},
+  components: { ...Controls },
   data() {
     return {
       dataItem: {}, // 初始化的值
@@ -203,7 +203,7 @@ export default {
     },
 
     // 控制相关字段显隐 - 业务消息推送权限配置，根据业务类型展示不同的字段
-    handleFieldShow(strVal = '') {
+    handleFieldsShow(strVal = '') {
 
     }
   },

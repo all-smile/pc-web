@@ -18,7 +18,7 @@
         align="right"
         type="date"
         placeholder="选择日期"
-        :picker-options="pickerOptions"
+        :picker-options="itemData.noShowPickOption ? {} : pickerOptions"
         :readonly="isDisable"
         :clearable="!itemData.required"
         @change="handleChange"

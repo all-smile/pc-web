@@ -21,7 +21,7 @@
         range-separator="至"
         start-placeholder="开始日期"
         end-placeholder="结束日期"
-        :picker-options="pickerOptions"
+        :picker-options="itemData.noShowPickOption ? {} : pickerOptions"
         :readonly="isDisable"
         :editable="itemData.editable"
         :clearable="!itemData.required"

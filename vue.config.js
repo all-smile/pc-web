@@ -32,6 +32,9 @@ module.exports = {
   parallel: require("os").cpus().length > 1, // 是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建。
   pwa: {}, // 向 PWA 插件传递选项。
   chainWebpack: (config) => {
+    config.devtool = () => {
+      return "source-map";
+    };
     config.plugin("html").tap((args) => {
       args[0].title = "xiao的调色板🎨";
       return args;

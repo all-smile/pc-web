@@ -8,13 +8,25 @@
         </p>
         <p class="compassNav-item__typeName">
           🎨技术栈：
-          <span class="compassNav-item__skill">Hexo | NexT | GitHub Pages | GitHub Actions | Netlify</span>
+          <span class="compassNav-item__skill"
+            >Hexo | NexT | GitHub Pages | GitHub Actions | Netlify</span
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://blog.i-xiao.space" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://blog.i-xiao.space"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://m.i-xiao.space" target="_blank">👉点击访问(备用网址)</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://m.i-xiao.space"
+            target="_blank"
+            >👉点击访问(备用网址)</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -24,10 +36,17 @@
         </p>
         <p class="compassNav-item__typeName">
           🎨技术栈：
-          <span class="compassNav-item__skill"> GitHub Pages + jekyll | GitHub Actions</span>
+          <span class="compassNav-item__skill">
+            GitHub Pages + jekyll | GitHub Actions</span
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://home.i-xiao.space" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://home.i-xiao.space"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -40,10 +59,20 @@
           <span class="compassNav-item__skill">Vue | NodeJs | Express</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://web.i-xiao.space" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://web.i-xiao.space"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://home.i-xiao.space/pc-web/" target="_blank">👉点击访问(备用网址)</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://home.i-xiao.space/pc-web/"
+            target="_blank"
+            >👉点击访问(备用网址)</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -53,10 +82,17 @@
         </p>
         <p class="compassNav-item__typeName">
           🎨技术栈：
-          <span class="compassNav-item__skill">Vue | WebRTC | face-api.js | node-zip</span>
+          <span class="compassNav-item__skill"
+            >Vue | WebRTC | face-api.js | node-zip</span
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/h5/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://www.i-xiao.space/h5/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -66,7 +102,12 @@
         </p>
         <p class="compassNav-item__typeName"><strong>🧨有大量干货</strong></p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.yuque.com/allblue-byynd" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://www.yuque.com/xiaojt"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -75,7 +116,12 @@
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://juejin.cn/user/852876755212814/posts" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://juejin.cn/user/852876755212814/columns"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -84,7 +130,12 @@
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://blog.csdn.net/heyYouU?type=blog" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://blog.csdn.net/heyYouU?type=blog"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -93,7 +144,12 @@
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.zhihu.com/people/xiaojt_95/posts" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://www.zhihu.com/people/xiaojt_95/posts"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -102,17 +158,30 @@
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.cnblogs.com/all-smile" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://www.cnblogs.com/all-smile"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">个人博客(WordPress)</span>
+        <span class="compassNav-item__count text-hover"
+          >个人博客(WordPress)</span
+        >
         <p class="compassNav-item__typeName clamp_2">
           ✨主要用来对外输出经验\知识
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8000/" target="_blank">👉点击访问</a>
-        </p>clamp_2
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:8000/"
+            target="_blank"
+            >👉点击访问</a
+          >
+        </p>
+        clamp_2
       </div>
       <div class="compassNav-item">
         <span class="compassNav-item__count text-hover">ChitChat</span>
@@ -124,16 +193,24 @@
           <span class="compassNav-item__skill">Go | PostgreSQl</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8088/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:8088/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
         <span class="compassNav-item__count text-hover">Docker Hub</span>
-        <p class="compassNav-item__typeName clamp_2">
-          ✨镜像管理仓库
-        </p>
+        <p class="compassNav-item__typeName clamp_2">✨镜像管理仓库</p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://hub.docker.com/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://hub.docker.com/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -142,7 +219,12 @@
           ✨CI集成，构建镜像，自动发布
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8082/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:8082/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -151,10 +233,20 @@
           ✨Go进程管理平台，进行启停操作、查看日志等
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://www.i-xiao.space/supervisor/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://www.i-xiao.space/supervisor/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问(备用网站)</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:9001/"
+            target="_blank"
+            >👉点击访问(备用网站)</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -168,25 +260,31 @@
         </p>
         <p class="compassNav-item__typeName">
           🔊暂未部署上线，敬请期待
-          <!-- <a class="compassNav-item__link text-hover" href="http://118.190.59.105:9001/" target="_blank">👉点击访问</a> -->
+          <!-- <a class="compassNav-item__link text-hover" href="http://i-xiao.space:9001/" target="_blank">👉点击访问</a> -->
         </p>
       </div>
       <div class="compassNav-item">
         <span class="compassNav-item__count text-hover">Gitee</span>
-        <p class="compassNav-item__typeName clamp_2">
-          ✨代码仓库
-        </p>
+        <p class="compassNav-item__typeName clamp_2">✨代码仓库</p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://gitee.com/hey-u" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://gitee.com/hey-u"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
         <span class="compassNav-item__count text-hover">GitHub</span>
-        <p class="compassNav-item__typeName clamp_2">
-          ✨代码仓库
-        </p>
+        <p class="compassNav-item__typeName clamp_2">✨代码仓库</p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="https://github.com/all-smile" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://github.com/all-smile"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -196,10 +294,17 @@
         </p>
         <p class="compassNav-item__typeName">
           🎨技术栈：
-          <span class="compassNav-item__skill">NodeJs | MongoDB | Express | log4js | PM2</span>
+          <span class="compassNav-item__skill"
+            >NodeJs | MongoDB | Express | log4js | PM2</span
+          >
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:3000/" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:3000/"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
       <div class="compassNav-item">
@@ -212,15 +317,20 @@
           <span class="compassNav-item__skill">React | WebRTC | Antd</span>
         </p>
         <p class="compassNav-item__typeName">
-          <a class="compassNav-item__link text-hover" href="http://118.190.59.105:8090/main/home" target="_blank">👉点击访问</a>
+          <a
+            class="compassNav-item__link text-hover"
+            href="http://i-xiao.space:8090/main/home"
+            target="_blank"
+            >👉点击访问</a
+          >
         </p>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
+// 118.190.59.105
 export default {
   name: 'CompassNav',
   props: {},

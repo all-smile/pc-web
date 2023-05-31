@@ -89,7 +89,7 @@
         <p class="compassNav-item__typeName">
           <a
             class="compassNav-item__link text-hover"
-            href="https://www.i-xiao.space/h5/"
+            href="https://home.i-xiao.space/mobile-h5/"
             target="_blank"
             >👉点击访问</a
           >
@@ -181,7 +181,6 @@
             >👉点击访问</a
           >
         </p>
-        clamp_2
       </div>
       <div class="compassNav-item">
         <span class="compassNav-item__count text-hover">ChitChat</span>

@@ -1,10 +1,16 @@
 <template>
   <div class="fly-button" ref="FlyButton">
     <div v-if="mainObj.delState == 1 || mainObj.seasFlag == 1"></div>
-    <div class="switch" :class="isOpen ? 'transition_all':''" v-else @click="plusClick(0)" :title="title">
+    <div
+      class="switch"
+      :class="isOpen ? 'transition_all' : ''"
+      v-else
+      @click="plusClick(0)"
+      :title="title"
+    >
       <IconColor iconName="baseball"></IconColor>
     </div>
-    <div class="Open" :class="isOpen ? 'action':''">
+    <div class="Open" :class="isOpen ? 'action' : ''">
       <div class="list comment" @click="plusClick(1)">
         <span class="iconBox transition_all">
           <IconColor iconName="hamburger"></IconColor>
@@ -42,7 +48,6 @@
         <span class="text">冰棍</span>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -108,7 +113,7 @@ export default {
             this.$router.push('/main/document-struct/bizfield')
             break;
           case 2:
-            this.$router.push('/compassNav')
+            this.$router.push('/wiki')
             break;
           case 5:
             this.$router.push('/main/tools/uploadFile')

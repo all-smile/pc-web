@@ -2,7 +2,7 @@
   <div class="compassNav">
     <div class="compassNav__content">
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">个人博客</span>
+        <span class="compassNav-item__count text-hover">个人博客-Hexo</span>
         <p class="compassNav-item__typeName clamp_2">
           ✨个人创建维护的静态网页博客，互联网时代自己的一片自留地，欢快的成长，欢迎大家来我的博客聊天呀😉
         </p>
@@ -26,6 +26,26 @@
             href="https://m.i-xiao.space"
             target="_blank"
             >👉点击访问(备用网址)</a
+          >
+        </p>
+      </div>
+      <div class="compassNav-item">
+        <span class="compassNav-item__count text-hover">个人博客-VuePress</span>
+        <p class="compassNav-item__typeName clamp_2">
+          ✨互联网时代自己的一片自留地，文章主要从我的个人语雀文档里移植过来，欢迎访问😉
+        </p>
+        <p class="compassNav-item__typeName">
+          🎨技术栈：
+          <span class="compassNav-item__skill"
+            >VuePress | GitHub Pages | GitHub Actions</span
+          >
+        </p>
+        <p class="compassNav-item__typeName">
+          <a
+            class="compassNav-item__link text-hover"
+            href="https://home.i-xiao.space/vuepress-star/"
+            target="_blank"
+            >👉点击访问</a
           >
         </p>
       </div>

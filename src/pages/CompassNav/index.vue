@@ -111,7 +111,9 @@
         </p>
       </div>
       <div class="compassNav-item">
-        <span class="compassNav-item__count text-hover">掘金</span>
+        <span class="compassNav-item__count text-hover"
+          >掘金（优秀创作者）</span
+        >
         <p class="compassNav-item__typeName clamp_2">
           ✨主要用来对外输出经验\知识
         </p>
